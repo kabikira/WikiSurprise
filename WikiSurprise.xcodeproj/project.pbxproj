@@ -13,6 +13,20 @@
 		3B6958D52A2AE56000EC3CE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B6958D32A2AE56000EC3CE0 /* Main.storyboard */; };
 		3B6958D72A2AE56100EC3CE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B6958D62A2AE56100EC3CE0 /* Assets.xcassets */; };
 		3B6958DA2A2AE56100EC3CE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B6958D82A2AE56100EC3CE0 /* LaunchScreen.storyboard */; };
+		3B6958E62A2C619F00EC3CE0 /* WikiAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6958E52A2C619F00EC3CE0 /* WikiAPI.swift */; };
+		3B6958E82A2C61AD00EC3CE0 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6958E72A2C61AD00EC3CE0 /* Router.swift */; };
+		3B6958EA2A2C61D300EC3CE0 /* WikiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6958E92A2C61D300EC3CE0 /* WikiModel.swift */; };
+		3B6958F12A2C635B00EC3CE0 /* Article.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B6958F02A2C635B00EC3CE0 /* Article.storyboard */; };
+		3B6958F32A2C637C00EC3CE0 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6958F22A2C637C00EC3CE0 /* ArticleViewController.swift */; };
+		3B6958F52A2C639300EC3CE0 /* Web.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B6958F42A2C639300EC3CE0 /* Web.storyboard */; };
+		3B6958F72A2C63AF00EC3CE0 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6958F62A2C63AF00EC3CE0 /* WebViewController.swift */; };
+		3B6958F92A2C647800EC3CE0 /* UserDefaults+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6958F82A2C647800EC3CE0 /* UserDefaults+.swift */; };
+		3B6958FE2A2C9E3F00EC3CE0 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6958FD2A2C9E3F00EC3CE0 /* HistoryViewController.swift */; };
+		3B6959002A2C9E5400EC3CE0 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B6958FF2A2C9E5400EC3CE0 /* History.storyboard */; };
+		3B6959022A2C9EA400EC3CE0 /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B6959012A2C9EA400EC3CE0 /* ArticleTableViewCell.xib */; };
+		3B6959042A2C9F4400EC3CE0 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6959032A2C9F4400EC3CE0 /* ArticleTableViewCell.swift */; };
+		3B6959062A2C9F6A00EC3CE0 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B6959052A2C9F6A00EC3CE0 /* HistoryTableViewCell.xib */; };
+		3B6959082A2C9F8500EC3CE0 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6959072A2C9F8500EC3CE0 /* HistoryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +38,20 @@
 		3B6958D62A2AE56100EC3CE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B6958D92A2AE56100EC3CE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B6958DB2A2AE56100EC3CE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B6958E52A2C619F00EC3CE0 /* WikiAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiAPI.swift; sourceTree = "<group>"; };
+		3B6958E72A2C61AD00EC3CE0 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		3B6958E92A2C61D300EC3CE0 /* WikiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiModel.swift; sourceTree = "<group>"; };
+		3B6958F02A2C635B00EC3CE0 /* Article.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Article.storyboard; sourceTree = "<group>"; };
+		3B6958F22A2C637C00EC3CE0 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		3B6958F42A2C639300EC3CE0 /* Web.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Web.storyboard; sourceTree = "<group>"; };
+		3B6958F62A2C63AF00EC3CE0 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		3B6958F82A2C647800EC3CE0 /* UserDefaults+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+.swift"; sourceTree = "<group>"; };
+		3B6958FD2A2C9E3F00EC3CE0 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		3B6958FF2A2C9E5400EC3CE0 /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
+		3B6959012A2C9EA400EC3CE0 /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
+		3B6959032A2C9F4400EC3CE0 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		3B6959052A2C9F6A00EC3CE0 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
+		3B6959072A2C9F8500EC3CE0 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +89,11 @@
 				3B6958D12A2AE56000EC3CE0 /* ViewController.swift */,
 				3B6958D32A2AE56000EC3CE0 /* Main.storyboard */,
 				3B6958D62A2AE56100EC3CE0 /* Assets.xcassets */,
-				3B6958E32A2AE5AB00EC3CE0 /* Controllers */,
+				3B6958EB2A2C61E300EC3CE0 /* Article */,
+				3B6958FA2A2C67CF00EC3CE0 /* History */,
+				3B6958EC2A2C621B00EC3CE0 /* Web */,
 				3B6958E22A2AE5A100EC3CE0 /* Model */,
+				3B6958E42A2C617600EC3CE0 /* Utility */,
 				3B6958D82A2AE56100EC3CE0 /* LaunchScreen.storyboard */,
 				3B6958DB2A2AE56100EC3CE0 /* Info.plist */,
 			);
@@ -72,15 +103,90 @@
 		3B6958E22A2AE5A100EC3CE0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3B6958E92A2C61D300EC3CE0 /* WikiModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		3B6958E32A2AE5AB00EC3CE0 /* Controllers */ = {
+		3B6958E32A2AE5AB00EC3CE0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3B6958F02A2C635B00EC3CE0 /* Article.storyboard */,
+				3B6958F22A2C637C00EC3CE0 /* ArticleViewController.swift */,
 			);
-			path = Controllers;
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3B6958E42A2C617600EC3CE0 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				3B6958E52A2C619F00EC3CE0 /* WikiAPI.swift */,
+				3B6958E72A2C61AD00EC3CE0 /* Router.swift */,
+				3B6958F82A2C647800EC3CE0 /* UserDefaults+.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		3B6958EB2A2C61E300EC3CE0 /* Article */ = {
+			isa = PBXGroup;
+			children = (
+				3B6958ED2A2C62C100EC3CE0 /* View */,
+				3B6958E32A2AE5AB00EC3CE0 /* Controller */,
+			);
+			path = Article;
+			sourceTree = "<group>";
+		};
+		3B6958EC2A2C621B00EC3CE0 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				3B6958EF2A2C62EE00EC3CE0 /* Controller */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+		3B6958ED2A2C62C100EC3CE0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3B6959012A2C9EA400EC3CE0 /* ArticleTableViewCell.xib */,
+				3B6959032A2C9F4400EC3CE0 /* ArticleTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3B6958EF2A2C62EE00EC3CE0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3B6958F42A2C639300EC3CE0 /* Web.storyboard */,
+				3B6958F62A2C63AF00EC3CE0 /* WebViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3B6958FA2A2C67CF00EC3CE0 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				3B6958FB2A2C67E500EC3CE0 /* View */,
+				3B6958FC2A2C67F200EC3CE0 /* Controller */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		3B6958FB2A2C67E500EC3CE0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3B6959052A2C9F6A00EC3CE0 /* HistoryTableViewCell.xib */,
+				3B6959072A2C9F8500EC3CE0 /* HistoryTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3B6958FC2A2C67F200EC3CE0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3B6958FD2A2C9E3F00EC3CE0 /* HistoryViewController.swift */,
+				3B6958FF2A2C9E5400EC3CE0 /* History.storyboard */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,8 +248,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B6958DA2A2AE56100EC3CE0 /* LaunchScreen.storyboard in Resources */,
+				3B6958F12A2C635B00EC3CE0 /* Article.storyboard in Resources */,
+				3B6958F52A2C639300EC3CE0 /* Web.storyboard in Resources */,
 				3B6958D72A2AE56100EC3CE0 /* Assets.xcassets in Resources */,
+				3B6959022A2C9EA400EC3CE0 /* ArticleTableViewCell.xib in Resources */,
 				3B6958D52A2AE56000EC3CE0 /* Main.storyboard in Resources */,
+				3B6959062A2C9F6A00EC3CE0 /* HistoryTableViewCell.xib in Resources */,
+				3B6959002A2C9E5400EC3CE0 /* History.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,8 +266,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B6958D22A2AE56000EC3CE0 /* ViewController.swift in Sources */,
+				3B6958F92A2C647800EC3CE0 /* UserDefaults+.swift in Sources */,
+				3B6958EA2A2C61D300EC3CE0 /* WikiModel.swift in Sources */,
+				3B6958FE2A2C9E3F00EC3CE0 /* HistoryViewController.swift in Sources */,
+				3B6958F32A2C637C00EC3CE0 /* ArticleViewController.swift in Sources */,
+				3B6959042A2C9F4400EC3CE0 /* ArticleTableViewCell.swift in Sources */,
+				3B6959082A2C9F8500EC3CE0 /* HistoryTableViewCell.swift in Sources */,
 				3B6958CE2A2AE56000EC3CE0 /* AppDelegate.swift in Sources */,
+				3B6958E82A2C61AD00EC3CE0 /* Router.swift in Sources */,
+				3B6958E62A2C619F00EC3CE0 /* WikiAPI.swift in Sources */,
 				3B6958D02A2AE56000EC3CE0 /* SceneDelegate.swift in Sources */,
+				3B6958F72A2C63AF00EC3CE0 /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
