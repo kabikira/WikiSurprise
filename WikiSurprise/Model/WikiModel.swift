@@ -7,3 +7,15 @@
 
 import Foundation
 
+struct Article: Codable {
+    let id: Int
+    let title: String
+}
+
+struct Query: Codable {
+    let random: [Article]
+}
+
+struct RandomResponse: Codable {
+    let query: Query
+}
