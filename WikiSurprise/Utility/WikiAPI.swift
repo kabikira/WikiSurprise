@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+enum WikiError: Error {
+    case error
+}
+
+final class WikiAPI {
+    static let shared = WikiAPI()
+
+    private init() {}
+    
+}
