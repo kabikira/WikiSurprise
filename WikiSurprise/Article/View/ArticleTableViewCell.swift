@@ -13,8 +13,8 @@ final class ArticleTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         title.text = nil
     }
-
-   
-
+    func configure(article: Article) {
+           self.title.text = article.title
+       }
 }
 
