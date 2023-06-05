@@ -13,7 +13,7 @@ struct Article: Codable {
 }
 
 struct Query: Codable {
-    let random: [Article]
+    let random: [Article]?
 }
 
 struct RandomResponse: Codable {
