@@ -16,6 +16,7 @@ class ArticleViewController: UIViewController {
 
         }
     }
+    @IBOutlet private weak var indicator: UIActivityIndicatorView!
 
     @IBOutlet private weak var fetchArticleButton: UIButton! {
         didSet {
@@ -30,4 +31,10 @@ class ArticleViewController: UIViewController {
     
 
 
+}
+
+extension ArticleViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // ルーターで画面遷移処理
+    }
 }

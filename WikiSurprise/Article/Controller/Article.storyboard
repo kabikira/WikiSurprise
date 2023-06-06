@@ -72,6 +72,7 @@
                     </view>
                     <connections>
                         <outlet property="fetchArticleButton" destination="Ghx-cg-hfY" id="8fC-gA-hsK"/>
+                        <outlet property="indicator" destination="Zvq-DK-9TH" id="h4S-Hq-eAs"/>
                         <outlet property="tableView" destination="3JN-jg-ZgF" id="Q5N-RD-vhU"/>
                     </connections>
                 </viewController>
