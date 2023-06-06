@@ -13,6 +13,7 @@ final class ArticleTableViewCell: UITableViewCell {
     static var className: String { String(describing: ArticleTableViewCell.self)}
 
     override func prepareForReuse() {
+        super.prepareForReuse()
         title.text = nil
     }
     func configure(article: Article) {
