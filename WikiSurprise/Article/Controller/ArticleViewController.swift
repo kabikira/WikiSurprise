@@ -9,21 +9,25 @@ import UIKit
 
 class ArticleViewController: UIViewController {
 
+    @IBOutlet private weak var tableView: UITableView! {
+        didSet {
+            tableView.register(UINib.init(nibName: ArticleTableViewCell.className, bundle: nil), forCellReuseIdentifier: ArticleTableViewCell.className)
+
+
+        }
+    }
+
+    @IBOutlet private weak var fetchArticleButton: UIButton! {
+        didSet {
+            // APIを叩いて記事取得
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

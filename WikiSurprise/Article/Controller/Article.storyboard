@@ -70,6 +70,10 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Ei0-gj-eu1" secondAttribute="bottom" id="kwC-RJ-dNp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="fetchArticleButton" destination="Ghx-cg-hfY" id="8fC-gA-hsK"/>
+                        <outlet property="tableView" destination="3JN-jg-ZgF" id="Q5N-RD-vhU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -82,4 +86,3 @@
         </systemColor>
     </resources>
 </document>
-
