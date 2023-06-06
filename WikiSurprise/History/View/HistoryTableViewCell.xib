@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IZq-sT-86o">
+        <view clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IZq-sT-86o" customClass="HistoryTableViewCell" customModule="WikiSurprise" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="393" height="150"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -37,6 +37,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="histryTitle" destination="QR2-em-PmS" id="p75-Cf-t8W"/>
                 <outlet property="title" destination="QR2-em-PmS" id="EZE-ew-ATN"/>
             </connections>
             <point key="canvasLocation" x="6" y="21"/>
