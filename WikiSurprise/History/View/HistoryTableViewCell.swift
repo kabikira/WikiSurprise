@@ -11,4 +11,8 @@ final class HistoryTableViewCell: UITableViewCell {
 
     @IBOutlet private weak var histryTitle: UILabel!
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        histryTitle.text = nil
+    }
 }
