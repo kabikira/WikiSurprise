@@ -43,9 +43,8 @@ class ArticleViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
-
+        tableView.isHidden = true
+        indicator.isHidden = true
     }
     
 
