@@ -10,6 +10,7 @@ import Foundation
 struct Article: Codable {
     let id: Int
     let title: String
+    var urlStr: String { "https://ja.wikipedia.org/wiki/\(title)".addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""}
 }
 
 struct Query: Codable {
