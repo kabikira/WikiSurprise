@@ -38,3 +38,20 @@ extension ArticleViewController: UITableViewDelegate {
         // ルーターで画面遷移処理
     }
 }
+
+extension ArticleViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ArticleTableViewCell.className) as?
+                ArticleTableViewCell else {
+            fatalError()
+        }
+        // ダミーです
+        return cell
+
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // 仮の実装
+        return 5
+    }
+}
