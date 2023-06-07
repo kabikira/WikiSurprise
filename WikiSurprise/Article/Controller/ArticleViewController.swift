@@ -79,7 +79,7 @@ extension ArticleViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // 仮の実装
-        return 5
+        
+        return articles.count
     }
 }
