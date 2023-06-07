@@ -12,7 +12,8 @@ class ArticleViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
             tableView.register(UINib.init(nibName: ArticleTableViewCell.className, bundle: nil), forCellReuseIdentifier: ArticleTableViewCell.className)
-
+            tableView.dataSource = self
+            tableView.delegate = self
 
         }
     }
