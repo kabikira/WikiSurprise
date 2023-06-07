@@ -20,23 +20,9 @@ class ArticleViewController: UIViewController {
 
     @IBOutlet private weak var fetchArticleButton: UIButton! {
         didSet {
-            indicator.isHidden = false
-            tableView.isHidden = true
-            WikiAPI.shared.getArticle() { result in
-                DispatchQueue.main.async {
-                    self.indicator.isHidden = true
-                    self.tableView.isHidden = false
-                    switch result {
-                    case .failure(let error):
-                        // 仮のエラーハンドリング
-                        print(error)
-                    case.success(let items):
-                        self.articles = items
-                        self.tableView.reloadData()
-                    }
-                }
+            fetchArticleButton.addTarget(self, action: #selector(tapFetchArticleButton(_sender:)), for: .touchUpInside)
+
             }
-        }
     }
 
     private var articles: [Article] = []
@@ -46,8 +32,28 @@ class ArticleViewController: UIViewController {
         tableView.isHidden = true
         indicator.isHidden = true
     }
-    
 
+    @objc func tapFetchArticleButton(_sender: UIButton) {
+        print("HEY")
+        indicator.isHidden = false
+        tableView.isHidden = true
+        WikiAPI.shared.getArticle() { result in
+            DispatchQueue.main.async {
+                self.indicator.isHidden = true
+                self.tableView.isHidden = false
+                switch result {
+                case .failure(let error):
+                    // 仮のエラーハンドリング
+                    print(error)
+                case.success(let models):
+                    print(models)
+                    self.articles = models
+                    self.tableView.reloadData()
+                }
+            }
+        }
+
+    }
 
 }
 
@@ -63,9 +69,10 @@ extension ArticleViewController: UITableViewDataSource {
                 ArticleTableViewCell else {
             fatalError()
         }
-        // ダミーです
+
         let article = articles[indexPath.row]
         cell.configure(article: article)
+        print("\(cell)")
         return cell
 
     }
