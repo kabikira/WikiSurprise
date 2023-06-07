@@ -20,11 +20,30 @@ class ArticleViewController: UIViewController {
 
     @IBOutlet private weak var fetchArticleButton: UIButton! {
         didSet {
-            // APIを叩いて記事取得
+            indicator.isHidden = false
+            tableView.isHidden = true
+            WikiAPI.shared.getArticle() { result in
+                DispatchQueue.main.async {
+                    self.indicator.isHidden = true
+                    self.tableView.isHidden = false
+                    switch result {
+                    case .failure(let error):
+                        // 仮のエラーハンドリング
+                        print(error)
+                    case.success(let items):
+                        self.articles = items
+                        self.tableView.reloadData()
+                    }
+                }
+            }
         }
     }
+
+    private var articles: [Article] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
 
 
     }
@@ -46,6 +65,8 @@ extension ArticleViewController: UITableViewDataSource {
             fatalError()
         }
         // ダミーです
+        let article = articles[indexPath.row]
+        cell.configure(article: article)
         return cell
 
     }
