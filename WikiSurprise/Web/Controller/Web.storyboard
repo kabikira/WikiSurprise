@@ -35,6 +35,9 @@
                             <constraint firstItem="4gn-6i-G4t" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="pn2-UC-SFc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="4gn-6i-G4t" id="imU-a2-bd2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
