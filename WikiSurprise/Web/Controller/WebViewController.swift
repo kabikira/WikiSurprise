@@ -12,22 +12,19 @@ final class WebViewController: UIViewController {
 
     @IBOutlet private weak var webView: WKWebView!
 
-    private var wikiAritcle: Article?
+    private var wikiArticle: Article?
 
-    func configure(wikiAritcle: Article) {
-        self.wikiAritcle = wikiAritcle
+    func configure(wikiArticle: Article) {
+        self.wikiArticle = wikiArticle
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("test!!!!!")
-        print(wikiAritcle)
-//        guard
-//            let wikiAritcle = wikiAritcle,
-//            let url = URL(string: wikiAritcle.urlStr) else {
-//            return
-//        }
-        webView.load(URLRequest(url: URL(string: "https://qiita.com/Imael/items/0c75a2a5fbe5202a79c6")!))
+        guard
+            let wikiArticle = wikiArticle,
+            let url = URL(string: wikiArticle.urlStr) else {
+            return
+        }
+        webView.load(URLRequest(url: url))
     }
-
-
 }
+

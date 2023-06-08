@@ -23,7 +23,7 @@ final class Router {
         self.window = window
     }
     func showWeb(from: UIViewController, articleModel: Article) {
-        guard let web = UIStoryboard.init(name: "web", bundle: nil).instantiateInitialViewController() as? WebViewController else {
+        guard let web = UIStoryboard.init(name: "Web", bundle: nil).instantiateInitialViewController() as? WebViewController else {
             return
         }
         web.configure(wikiAritcle: articleModel)

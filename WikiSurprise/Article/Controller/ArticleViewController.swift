@@ -23,7 +23,7 @@ class ArticleViewController: UIViewController {
         didSet {
             fetchArticleButton.addTarget(self, action: #selector(tapFetchArticleButton(_sender:)), for: .touchUpInside)
 
-            }
+        }
     }
 
     private var articles: [Article] = []
@@ -35,7 +35,6 @@ class ArticleViewController: UIViewController {
     }
 
     @objc func tapFetchArticleButton(_sender: UIButton) {
-        print("HEY")
         indicator.isHidden = false
         tableView.isHidden = true
         WikiAPI.shared.getArticle() { result in
@@ -63,12 +62,9 @@ extension ArticleViewController: UITableViewDelegate {
         // 画面遷移後にUITableViewのセルが選択状態のままになってしまうのを防ぐ
         tableView.deselectRow(at: indexPath, animated: true)
         // ルーターで画面遷移処理
-        // ダミーの処理
-        if let vc = UIStoryboard(name: "Web", bundle: nil).instantiateInitialViewController() as? WebViewController {
-            navigationController?.pushViewController(vc, animated: true)
-        }
-    }
+        Router.shared.showWeb(from: self, articleModel: articles[indexPath.row])        }
 }
+
 
 extension ArticleViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -79,8 +75,6 @@ extension ArticleViewController: UITableViewDataSource {
 
         let article = articles[indexPath.row]
         cell.configure(article: article)
-        print("\(cell)")
-        print(article.urlStr)
         return cell
 
     }
