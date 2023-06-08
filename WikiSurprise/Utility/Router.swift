@@ -26,7 +26,7 @@ final class Router {
         guard let web = UIStoryboard.init(name: "Web", bundle: nil).instantiateInitialViewController() as? WebViewController else {
             return
         }
-        web.configure(wikiAritcle: articleModel)
+        web.configure(wikiArticle: articleModel)
         show(from: from, to: web)
     }
 }

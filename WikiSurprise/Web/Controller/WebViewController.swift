@@ -22,9 +22,17 @@ final class WebViewController: UIViewController {
         guard
             let wikiArticle = wikiArticle,
             let url = URL(string: wikiArticle.urlStr) else {
+            // 仮のエラー処理
+            print("WebView: Error")
             return
         }
-        webView.load(URLRequest(url: url))
+        DispatchQueue.global(qos: .userInitiated).async {
+            let request = URLRequest(url: url)
+            DispatchQueue.main.async {
+                self.webView.load(request)
+            }
+        }
+
     }
 }
 
