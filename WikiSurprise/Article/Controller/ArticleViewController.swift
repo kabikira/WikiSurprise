@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ArticleViewController: UIViewController {
+final class ArticleViewController: UIViewController {
 
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
