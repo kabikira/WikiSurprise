@@ -19,12 +19,14 @@ final class WebViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard
-            let wikiAritcle = wikiAritcle,
-            let url = URL(string: wikiAritcle.urlStr) else {
-            return
-        }
-        webView.load(URLRequest(url: url))
+        print("test!!!!!")
+        print(wikiAritcle)
+//        guard
+//            let wikiAritcle = wikiAritcle,
+//            let url = URL(string: wikiAritcle.urlStr) else {
+//            return
+//        }
+        webView.load(URLRequest(url: URL(string: "https://qiita.com/Imael/items/0c75a2a5fbe5202a79c6")!))
     }
 
 

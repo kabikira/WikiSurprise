@@ -18,7 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: scene)
         if let vc = UIStoryboard(name: "Article", bundle: nil).instantiateInitialViewController() as? ArticleViewController {
-            window.rootViewController = vc
+            let nvc = UINavigationController(rootViewController: vc)
+            window.rootViewController = nvc
             window.makeKeyAndVisible()
             self.window = window
         }
