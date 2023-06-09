@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B26E12C2A3362C400A18EEE /* WikiClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B26E12B2A3362C400A18EEE /* WikiClientError.swift */; };
 		3B6958CE2A2AE56000EC3CE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6958CD2A2AE56000EC3CE0 /* AppDelegate.swift */; };
 		3B6958D02A2AE56000EC3CE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6958CF2A2AE56000EC3CE0 /* SceneDelegate.swift */; };
 		3B6958D72A2AE56100EC3CE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B6958D62A2AE56100EC3CE0 /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B26E12B2A3362C400A18EEE /* WikiClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiClientError.swift; sourceTree = "<group>"; };
 		3B6958CA2A2AE56000EC3CE0 /* WikiSurprise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WikiSurprise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B6958CD2A2AE56000EC3CE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B6958CF2A2AE56000EC3CE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B26E12A2A33628400A18EEE /* API */ = {
+			isa = PBXGroup;
+			children = (
+				3B6958E52A2C619F00EC3CE0 /* WikiAPI.swift */,
+				3B26E12B2A3362C400A18EEE /* WikiClientError.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		3B6958C12A2AE56000EC3CE0 = {
 			isa = PBXGroup;
 			children = (
@@ -114,7 +125,7 @@
 		3B6958E42A2C617600EC3CE0 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				3B6958E52A2C619F00EC3CE0 /* WikiAPI.swift */,
+				3B26E12A2A33628400A18EEE /* API */,
 				3B6958E72A2C61AD00EC3CE0 /* Router.swift */,
 				3B6958F82A2C647800EC3CE0 /* UserDefaults+.swift */,
 			);
@@ -267,6 +278,7 @@
 				3B6958CE2A2AE56000EC3CE0 /* AppDelegate.swift in Sources */,
 				3B6958E82A2C61AD00EC3CE0 /* Router.swift in Sources */,
 				3B6958E62A2C619F00EC3CE0 /* WikiAPI.swift in Sources */,
+				3B26E12C2A3362C400A18EEE /* WikiClientError.swift in Sources */,
 				3B6958D02A2AE56000EC3CE0 /* SceneDelegate.swift in Sources */,
 				3B6958F72A2C63AF00EC3CE0 /* WebViewController.swift in Sources */,
 			);
