@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3B26E12C2A3362C400A18EEE /* WikiClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B26E12B2A3362C400A18EEE /* WikiClientError.swift */; };
+		3B26E12E2A33746E00A18EEE /* WikiAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B26E12D2A33746E00A18EEE /* WikiAPIError.swift */; };
 		3B6958CE2A2AE56000EC3CE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6958CD2A2AE56000EC3CE0 /* AppDelegate.swift */; };
 		3B6958D02A2AE56000EC3CE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6958CF2A2AE56000EC3CE0 /* SceneDelegate.swift */; };
 		3B6958D72A2AE56100EC3CE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B6958D62A2AE56100EC3CE0 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		3B26E12B2A3362C400A18EEE /* WikiClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiClientError.swift; sourceTree = "<group>"; };
+		3B26E12D2A33746E00A18EEE /* WikiAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiAPIError.swift; sourceTree = "<group>"; };
 		3B6958CA2A2AE56000EC3CE0 /* WikiSurprise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WikiSurprise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B6958CD2A2AE56000EC3CE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B6958CF2A2AE56000EC3CE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			children = (
 				3B6958E52A2C619F00EC3CE0 /* WikiAPI.swift */,
 				3B26E12B2A3362C400A18EEE /* WikiClientError.swift */,
+				3B26E12D2A33746E00A18EEE /* WikiAPIError.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B6958F92A2C647800EC3CE0 /* UserDefaults+.swift in Sources */,
+				3B26E12E2A33746E00A18EEE /* WikiAPIError.swift in Sources */,
 				3B6958EA2A2C61D300EC3CE0 /* WikiModel.swift in Sources */,
 				3B6958FE2A2C9E3F00EC3CE0 /* HistoryViewController.swift in Sources */,
 				3B6958F32A2C637C00EC3CE0 /* ArticleViewController.swift in Sources */,

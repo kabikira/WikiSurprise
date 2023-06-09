@@ -14,5 +14,7 @@ public enum WikiClientError: Error {
     // レスポンスの解釈に失敗
     case responseParseError(Error)
     // APIからエラーレスポンスを受け取った
-//    case apiError(WikiAPIError)
+    case apiError(WikiAPIError)
 }
+
+
