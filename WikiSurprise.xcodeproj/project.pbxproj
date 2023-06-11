@@ -12,6 +12,7 @@
 		3B26E1322A3453C700A18EEE /* WikiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B26E1312A3453C700A18EEE /* WikiRequest.swift */; };
 		3B26E1342A34564D00A18EEE /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B26E1332A34564D00A18EEE /* HTTPMethod.swift */; };
 		3B26E1362A34D45600A18EEE /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B26E1352A34D45600A18EEE /* HTTPClient.swift */; };
+		3B26E1382A355B5000A18EEE /* WikiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B26E1372A355B5000A18EEE /* WikiClient.swift */; };
 		3B6958CE2A2AE56000EC3CE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6958CD2A2AE56000EC3CE0 /* AppDelegate.swift */; };
 		3B6958D02A2AE56000EC3CE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6958CF2A2AE56000EC3CE0 /* SceneDelegate.swift */; };
 		3B6958D72A2AE56100EC3CE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B6958D62A2AE56100EC3CE0 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 		3B26E1312A3453C700A18EEE /* WikiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiRequest.swift; sourceTree = "<group>"; };
 		3B26E1332A34564D00A18EEE /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		3B26E1352A34D45600A18EEE /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		3B26E1372A355B5000A18EEE /* WikiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiClient.swift; sourceTree = "<group>"; };
 		3B6958CA2A2AE56000EC3CE0 /* WikiSurprise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WikiSurprise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B6958CD2A2AE56000EC3CE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B6958CF2A2AE56000EC3CE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				3B6958E52A2C619F00EC3CE0 /* WikiAPI.swift */,
+				3B26E1372A355B5000A18EEE /* WikiClient.swift */,
 				3B26E1352A34D45600A18EEE /* HTTPClient.swift */,
 				3B26E12F2A34535E00A18EEE /* Error */,
 				3B26E1302A34537900A18EEE /* Request */,
@@ -300,6 +303,7 @@
 				3B6958F92A2C647800EC3CE0 /* UserDefaults+.swift in Sources */,
 				3B26E12E2A33746E00A18EEE /* WikiAPIError.swift in Sources */,
 				3B6958EA2A2C61D300EC3CE0 /* WikiModel.swift in Sources */,
+				3B26E1382A355B5000A18EEE /* WikiClient.swift in Sources */,
 				3B6958FE2A2C9E3F00EC3CE0 /* HistoryViewController.swift in Sources */,
 				3B6958F32A2C637C00EC3CE0 /* ArticleViewController.swift in Sources */,
 				3B6959042A2C9F4400EC3CE0 /* ArticleTableViewCell.swift in Sources */,
