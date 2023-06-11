@@ -19,11 +19,11 @@ final class WebViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        webView.navigationDelegate = self
         guard
             let wikiArticle = wikiArticle,
             let url = URL(string: wikiArticle.urlStr) else {
-            // 仮のエラー処理
-            print("WebView: Error")
+            showError(WebViewError.connectionError.description)
             return
         }
         DispatchQueue.global(qos: .userInitiated).async {
@@ -32,7 +32,24 @@ final class WebViewController: UIViewController {
                 self.webView.load(request)
             }
         }
-
     }
+
+    private func showError(_ message: String) {
+            let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+
 }
 
+extension WebViewController: WKNavigationDelegate {
+    // ページの読み込み失敗
+    func webView(_ webView: WKWebView, didFail nabigation: WKNavigation!, withError error: Error) {
+        showError(WebViewError.pageLoadError.description)
+    }
+    // ユーザーのネットワーク接続が切れてるとき呼び出し
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        showError(WebViewError.connectionError.description)
+    }
+
+}

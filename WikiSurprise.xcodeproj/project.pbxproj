@@ -31,6 +31,7 @@
 		3B6959042A2C9F4400EC3CE0 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6959032A2C9F4400EC3CE0 /* ArticleTableViewCell.swift */; };
 		3B6959062A2C9F6A00EC3CE0 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B6959052A2C9F6A00EC3CE0 /* HistoryTableViewCell.xib */; };
 		3B6959082A2C9F8500EC3CE0 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6959072A2C9F8500EC3CE0 /* HistoryTableViewCell.swift */; };
+		3B783C832A36168300E20F8E /* WebViewError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B783C822A36168300E20F8E /* WebViewError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		3B6959032A2C9F4400EC3CE0 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		3B6959052A2C9F6A00EC3CE0 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		3B6959072A2C9F8500EC3CE0 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		3B783C822A36168300E20F8E /* WebViewError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				3B26E1352A34D45600A18EEE /* HTTPClient.swift */,
 				3B26E12F2A34535E00A18EEE /* Error */,
 				3B26E1302A34537900A18EEE /* Request */,
+				3B783C822A36168300E20F8E /* WebViewError.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				3B26E12E2A33746E00A18EEE /* WikiAPIError.swift in Sources */,
 				3B6958EA2A2C61D300EC3CE0 /* WikiModel.swift in Sources */,
 				3B26E1382A355B5000A18EEE /* WikiClient.swift in Sources */,
+				3B783C832A36168300E20F8E /* WebViewError.swift in Sources */,
 				3B6958FE2A2C9E3F00EC3CE0 /* HistoryViewController.swift in Sources */,
 				3B6958F32A2C637C00EC3CE0 /* ArticleViewController.swift in Sources */,
 				3B6959042A2C9F4400EC3CE0 /* ArticleTableViewCell.swift in Sources */,
