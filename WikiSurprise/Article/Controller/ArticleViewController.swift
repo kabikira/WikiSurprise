@@ -37,20 +37,26 @@ final class ArticleViewController: UIViewController {
     @objc func tapFetchArticleButton(_sender: UIButton) {
         indicator.isHidden = false
         tableView.isHidden = true
-        WikiAPI.shared.getArticle() { result in
+        // APIクライアントの生成
+        let client = WikiClient(httpClient: URLSession.shared)
+        // リクエストの発行
+        let request = WikiAPI.GetArticles()
+        // リクエストの送信
+        client.send(request: request) { result in
             DispatchQueue.main.async {
                 self.indicator.isHidden = true
                 self.tableView.isHidden = false
                 switch result {
-                case .failure(let error):
-                    // 仮のエラーハンドリング
-                    print(error)
-                case.success(let models):
-                    print(models)
-                    self.articles = models
+                case .success(let response):
+                    print(response)
+                    self.articles = response.query.random ?? []
+                    print(self.articles)
                     self.tableView.reloadData()
+                case .failure(let error):
+                    print(error)
                 }
             }
+
         }
 
     }
@@ -74,6 +80,8 @@ extension ArticleViewController: UITableViewDataSource {
         }
 
         let article = articles[indexPath.row]
+        // デバッグ
+        print("Article for cell at row \(indexPath.row): \(article)")
         cell.configure(article: article)
         return cell
 

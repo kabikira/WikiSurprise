@@ -7,16 +7,16 @@
 
 import Foundation
 
-struct Article: Codable {
+public struct Article: Codable {
     let id: Int
     let title: String
     var urlStr: String { "https://ja.wikipedia.org/wiki/" + (title.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")}
 }
 
-struct Query: Codable {
+public struct Query: Codable {
     let random: [Article]?
 }
 
-struct RandomResponse: Codable {
+public struct RandomResponse: Codable {
     let query: Query
 }
