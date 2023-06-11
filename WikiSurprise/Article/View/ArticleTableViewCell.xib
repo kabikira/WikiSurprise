@@ -35,7 +35,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="title" destination="RD4-0D-5qJ" id="NpM-hm-pkf"/>
+                <outlet property="titleLabel" destination="RD4-0D-5qJ" id="onk-Nr-rRz"/>
             </connections>
             <point key="canvasLocation" x="6" y="21"/>
         </view>

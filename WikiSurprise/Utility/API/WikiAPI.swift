@@ -38,7 +38,7 @@ import Foundation
 public final class WikiAPI {
     public struct GetArticles: WikiRequest {
 
-        public typealias Response = [Article]
+        public typealias Response = RandomResponse
 
         public var path: String {
             return "/w/api.php"

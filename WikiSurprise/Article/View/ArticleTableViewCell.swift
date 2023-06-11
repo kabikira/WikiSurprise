@@ -8,16 +8,17 @@
 import UIKit
 
 final class ArticleTableViewCell: UITableViewCell {
-    @IBOutlet private weak var title: UILabel!
+
+    @IBOutlet private weak var titleLabel: UILabel!
     // ハードコーティングを防ぐため
     static var className: String { String(describing: ArticleTableViewCell.self)}
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        title.text = nil
+        titleLabel.text = nil
     }
     func configure(article: Article) {
-           self.title.text = article.title
+           self.titleLabel.text = article.title
        }
 }
 
