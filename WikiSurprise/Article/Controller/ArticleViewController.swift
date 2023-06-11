@@ -58,21 +58,6 @@ final class ArticleViewController: UIViewController {
             }
 
         }
-//        WikiAPI.shared.getArticle() { result in
-//            DispatchQueue.main.async {
-//                self.indicator.isHidden = true
-//                self.tableView.isHidden = false
-//                switch result {
-//                case .failure(let error):
-//                    // 仮のエラーハンドリング
-//                    print(error)
-//                case.success(let models):
-//                    print(models)
-//                    self.articles = models
-//                    self.tableView.reloadData()
-//                }
-//            }
-//        }
 
     }
 
