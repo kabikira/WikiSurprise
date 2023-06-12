@@ -32,7 +32,16 @@ final class ArticleViewController: UIViewController {
         super.viewDidLoad()
         tableView.isHidden = true
         indicator.isHidden = true
-//        NetworkMonitor.shared.startMonitoring()
+        NetworkMonitor.shared.startMonitoring()
+        NotificationCenter.default.addObserver(self, selector: #selector(connectionLost), name: NetworkMonitor.connectionLost, object: nil)
+
+    }
+
+    @objc func connectionLost() {
+        DispatchQueue.main.async {
+            self.showAlert(message: "ネットワーク接続が切断されました｡")
+        }
+
     }
 
     @objc func tapFetchArticleButton(_sender: UIButton) {
