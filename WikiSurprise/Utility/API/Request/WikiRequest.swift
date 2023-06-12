@@ -5,8 +5,9 @@
 //  Created by koala panda on 2023/06/10.
 //
 
-import Foundation
 
+import Foundation
+// リクエストとして必要なものをまとめるプロトコル
 public protocol WikiRequest {
     associatedtype Response: Decodable
     var baseURL: URL { get }
@@ -36,6 +37,9 @@ public extension WikiRequest {
         var urlRequest = URLRequest(url: url)
         urlRequest.url = components?.url
         urlRequest.httpMethod = method.rawValue
+
+        // タイムアウトを60秒に設定
+        urlRequest.timeoutInterval = 60
 
         return urlRequest
     }

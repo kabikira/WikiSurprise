@@ -29,13 +29,14 @@ final class Router {
         web.configure(wikiArticle: articleModel)
         show(from: from, to: web)
     }
-}
-
-private func show(from: UIViewController, to: UIViewController, completion:(() -> Void)? = nil) {
-    if let nav = from.navigationController {
-        nav.pushViewController(to, animated: true)
-        completion?()
-    } else {
-        from.present(to, animated: true, completion: completion)
+    private func show(from: UIViewController, to: UIViewController, completion:(() -> Void)? = nil) {
+        if let nav = from.navigationController {
+            nav.pushViewController(to, animated: true)
+            completion?()
+        } else {
+            from.present(to, animated: true, completion: completion)
+        }
     }
 }
+
+
