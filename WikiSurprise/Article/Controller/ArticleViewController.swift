@@ -63,15 +63,15 @@ final class ArticleViewController: UIViewController {
                     print(self.articles)
                     self.tableView.reloadData()
                 case .failure(let error):
-                    print(error)
-                    self.showAlert(message: "ネットワークに接続できません｡")
+                    print("!!!!!!!!!!!!!!!\(error)")
+                    self.showAlert(message: "インターネットの接続に失敗しました｡")
                 }
             }
 
         }
 
     }
-   private func showAlert(message: String) {
+    private func showAlert(message: String) {
         let alert = UIAlertController(title: "エラー", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)

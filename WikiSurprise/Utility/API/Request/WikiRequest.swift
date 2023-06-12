@@ -38,6 +38,9 @@ public extension WikiRequest {
         urlRequest.url = components?.url
         urlRequest.httpMethod = method.rawValue
 
+        // タイムアウトを60秒に設定
+        urlRequest.timeoutInterval = 60
+
         return urlRequest
     }
 
