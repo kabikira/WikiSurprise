@@ -5,8 +5,9 @@
 //  Created by koala panda on 2023/06/10.
 //
 
-import Foundation
 
+import Foundation
+// リクエストとして必要なものをまとめるプロトコル
 public protocol WikiRequest {
     associatedtype Response: Decodable
     var baseURL: URL { get }

@@ -32,6 +32,7 @@ final class ArticleViewController: UIViewController {
         super.viewDidLoad()
         tableView.isHidden = true
         indicator.isHidden = true
+//        NetworkMonitor.shared.startMonitoring()
     }
 
     @objc func tapFetchArticleButton(_sender: UIButton) {
@@ -54,12 +55,19 @@ final class ArticleViewController: UIViewController {
                     self.tableView.reloadData()
                 case .failure(let error):
                     print(error)
+                    self.showAlert(message: "ネットワークに接続できません｡")
                 }
             }
 
         }
 
     }
+   private func showAlert(message: String) {
+        let alert = UIAlertController(title: "エラー", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+
 
 }
 
