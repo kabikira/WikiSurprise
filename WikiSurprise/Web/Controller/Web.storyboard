@@ -19,23 +19,29 @@
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4gn-6i-G4t">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="zBI-gj-WvL">
+                                <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="4gn-6i-G4t" secondAttribute="bottom" id="0tA-jo-9Lu"/>
                             <constraint firstItem="4gn-6i-G4t" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="7cM-iJ-BnD"/>
+                            <constraint firstItem="zBI-gj-WvL" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="RTG-SB-jfG"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4gn-6i-G4t" secondAttribute="trailing" id="VL2-HP-AWo"/>
+                            <constraint firstItem="zBI-gj-WvL" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ZCx-us-pAJ"/>
                             <constraint firstItem="4gn-6i-G4t" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="pn2-UC-SFc"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="indicator" destination="zBI-gj-WvL" id="WAB-oC-deO"/>
                         <outlet property="webView" destination="4gn-6i-G4t" id="imU-a2-bd2"/>
                     </connections>
                 </viewController>
