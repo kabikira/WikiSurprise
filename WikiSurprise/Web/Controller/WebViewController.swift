@@ -31,6 +31,7 @@ final class WebViewController: UIViewController {
         webView.isHidden = true
         indicator.isHidden = false
         connectionErrorView.isHidden = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refreshWebView))
         guard
             let wikiArticle = wikiArticle,
             let url = URL(string: wikiArticle.urlStr) else {
@@ -52,6 +53,9 @@ final class WebViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
+    @objc func refreshWebView() {
+        webView.reload()
+    }
 
 }
 
@@ -70,6 +74,7 @@ extension WebViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         print("WebView did finish loading.")
         indicator.isHidden = true
+        connectionErrorView.isHidden = true
     }
 
 }
