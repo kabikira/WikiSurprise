@@ -28,19 +28,47 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="zBI-gj-WvL">
                                 <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
                             </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cL7-7Z-mN5">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ARQ-GV-MNQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="インターネットに接続されていません" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8g-YP-eW0">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ARQ-GV-MNQ" secondAttribute="bottom" id="AJ2-ul-AGs"/>
+                                    <constraint firstItem="ARQ-GV-MNQ" firstAttribute="leading" secondItem="cL7-7Z-mN5" secondAttribute="leading" id="YIl-eQ-Omx"/>
+                                    <constraint firstItem="ARQ-GV-MNQ" firstAttribute="top" secondItem="cL7-7Z-mN5" secondAttribute="top" id="fh3-wd-ARg"/>
+                                    <constraint firstAttribute="trailing" secondItem="ARQ-GV-MNQ" secondAttribute="trailing" id="j4u-xv-Z1i"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="4gn-6i-G4t" secondAttribute="bottom" id="0tA-jo-9Lu"/>
                             <constraint firstItem="4gn-6i-G4t" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="7cM-iJ-BnD"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="cL7-7Z-mN5" secondAttribute="bottom" id="ECz-uz-P0y"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cL7-7Z-mN5" secondAttribute="trailing" id="EsY-lB-Eon"/>
                             <constraint firstItem="zBI-gj-WvL" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="RTG-SB-jfG"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4gn-6i-G4t" secondAttribute="trailing" id="VL2-HP-AWo"/>
                             <constraint firstItem="zBI-gj-WvL" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ZCx-us-pAJ"/>
                             <constraint firstItem="4gn-6i-G4t" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="pn2-UC-SFc"/>
+                            <constraint firstItem="cL7-7Z-mN5" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="rwt-m7-cUl"/>
+                            <constraint firstItem="cL7-7Z-mN5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="vaX-FS-clW"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="connectionErrorView" destination="cL7-7Z-mN5" id="5nY-fo-CKK"/>
                         <outlet property="indicator" destination="zBI-gj-WvL" id="WAB-oC-deO"/>
                         <outlet property="webView" destination="4gn-6i-G4t" id="imU-a2-bd2"/>
                     </connections>
@@ -51,6 +79,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
