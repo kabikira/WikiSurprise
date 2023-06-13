@@ -18,6 +18,8 @@ final class WebViewController: UIViewController {
 
     @IBOutlet private weak var indicator: UIActivityIndicatorView!
 
+    @IBOutlet private weak var connectionErrorView: UIView!
+
     private var wikiArticle: Article?
 
     func configure(wikiArticle: Article) {
@@ -28,10 +30,12 @@ final class WebViewController: UIViewController {
         webView.navigationDelegate = self
         webView.isHidden = true
         indicator.isHidden = false
+        connectionErrorView.isHidden = true
         guard
             let wikiArticle = wikiArticle,
             let url = URL(string: wikiArticle.urlStr) else {
             showError(WebViewError.connectionError.description)
+
             return
         }
         DispatchQueue.global(qos: .userInitiated).async {
@@ -55,10 +59,12 @@ extension WebViewController: WKNavigationDelegate {
     // ページの読み込み失敗
     func webView(_ webView: WKWebView, didFail nabigation: WKNavigation!, withError error: Error) {
         showError(WebViewError.pageLoadError.description)
+        connectionErrorView.isHidden = false
     }
     // ユーザーのネットワーク接続が切れてるとき呼び出し
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         showError(WebViewError.connectionError.description)
+        connectionErrorView.isHidden = false
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
