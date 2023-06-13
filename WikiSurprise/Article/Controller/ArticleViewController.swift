@@ -29,6 +29,8 @@ final class ArticleViewController: UIViewController {
 
     private var articles: [Article] = []
 
+    private let getArticleErrorMessage = "記事の取得に失敗しました｡"
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.isHidden = true
@@ -40,7 +42,7 @@ final class ArticleViewController: UIViewController {
 
     @objc func connectionLost() {
         DispatchQueue.main.async {
-            self.showAlert(message: "ネットワーク接続が切断されました｡")
+            self.showAlert(message: NetworkMonitor.connectionLost.rawValue)
         }
 
     }
@@ -65,7 +67,7 @@ final class ArticleViewController: UIViewController {
                     self.tableView.reloadData()
                 case .failure(let error):
                     print("!!!!!!!!!!!!!!!\(error)")
-                    self.showAlert(message: "インターネットの接続に失敗しました｡")
+                    self.showAlert(message: self.getArticleErrorMessage)
                 }
             }
 

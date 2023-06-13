@@ -14,7 +14,7 @@ final class NetworkMonitor {
 
     private let monitor: NWPathMonitor
 
-    static let connectionLost = Notification.Name("connectionLost")
+    static let connectionLost = Notification.Name("ネットワーク接続が切断されました｡")
 
     private init() {
         self.monitor = NWPathMonitor()

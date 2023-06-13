@@ -44,7 +44,7 @@ final class WebViewController: UIViewController {
     }
 
     private func showError(_ message: String) {
-            let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+            let alert = UIAlertController(title: "エラー", message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
