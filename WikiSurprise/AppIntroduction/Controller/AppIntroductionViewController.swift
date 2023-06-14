@@ -9,29 +9,21 @@ import UIKit
 
 class AppIntroductionViewController: UIViewController {
 
-    private let testImage: UIImage! = UIImage(named: "WikiSurprise")
+    private let image: UIImage! = UIImage(named: "WikiSurprise")
 
-    @IBOutlet weak var intorductionImage: UIImageView! {
+    @IBOutlet private weak var intorductionImage: UIImageView! {
         didSet {
-            intorductionImage.image = testImage
+            intorductionImage.image = image
 
         }
     }
-    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet private weak var doneButton: UIButton!
 
-    @IBAction func nextViewButton(_ sender: Any) {
+    @IBAction private func nextViewButton(_ sender: Any) {
         UserDefaults.standard.isLogined = true
         doneButton.isEnabled = false
         Router.shared.showArticle(from: self)
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
     
-
-
 
 }

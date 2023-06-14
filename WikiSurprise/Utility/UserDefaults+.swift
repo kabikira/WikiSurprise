@@ -13,8 +13,8 @@ extension UserDefaults {
         set {
             setValue(newValue, forKey: loginedKey)
         }
-        get { bool(forKey: loginedKey)
-            
+        get {
+            bool(forKey: loginedKey)
         }
     }
 }

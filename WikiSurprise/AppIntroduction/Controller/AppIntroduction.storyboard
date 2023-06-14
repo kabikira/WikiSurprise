@@ -28,10 +28,10 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="613"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X38-K6-bi7" userLabel="Container View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="1500" height="613"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="800" height="613"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5c1-tr-iv5">
-                                                                <rect key="frame" x="0.0" y="0.0" width="1500" height="613"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="800" height="613"/>
                                                             </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -39,7 +39,7 @@
                                                             <constraint firstAttribute="trailing" secondItem="5c1-tr-iv5" secondAttribute="trailing" id="6Py-5t-lT6"/>
                                                             <constraint firstAttribute="bottom" secondItem="5c1-tr-iv5" secondAttribute="bottom" id="Crq-XT-zwq"/>
                                                             <constraint firstItem="5c1-tr-iv5" firstAttribute="leading" secondItem="X38-K6-bi7" secondAttribute="leading" id="YGe-5u-9Z0"/>
-                                                            <constraint firstAttribute="width" constant="1500" id="cIW-kr-yyg"/>
+                                                            <constraint firstAttribute="width" constant="800" id="cIW-kr-yyg"/>
                                                             <constraint firstItem="5c1-tr-iv5" firstAttribute="top" secondItem="X38-K6-bi7" secondAttribute="top" id="y15-4b-mJt"/>
                                                         </constraints>
                                                     </view>
@@ -59,7 +59,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Txl-ju-upb">
                                         <rect key="frame" x="0.0" y="613" width="393" height="70"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="e1j-lZ-Nlg">
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1j-lZ-Nlg">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="70"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="→右にスクロールしてね!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwP-xl-Lji">
