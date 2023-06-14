@@ -9,7 +9,7 @@ import UIKit
 
 class AppIntroductionViewController: UIViewController {
 
-    private let testImage: UIImage! = UIImage(named: "test")
+    private let testImage: UIImage! = UIImage(named: "WikiSurprise")
 
     @IBOutlet weak var intorductionImage: UIImageView! {
         didSet {
