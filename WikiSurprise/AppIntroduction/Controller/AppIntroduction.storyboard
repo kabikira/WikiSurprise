@@ -58,9 +58,26 @@
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Txl-ju-upb">
                                         <rect key="frame" x="0.0" y="613" width="393" height="70"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="e1j-lZ-Nlg">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="70"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="→右にスクロールしてね!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwP-xl-Lji">
+                                                        <rect key="frame" x="0.0" y="0.0" width="393" height="70"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="2wJ-aS-Bs5"/>
+                                            <constraint firstItem="e1j-lZ-Nlg" firstAttribute="leading" secondItem="Txl-ju-upb" secondAttribute="leading" id="BCp-C0-Ky3"/>
+                                            <constraint firstAttribute="trailing" secondItem="e1j-lZ-Nlg" secondAttribute="trailing" id="QfG-04-Evb"/>
+                                            <constraint firstItem="e1j-lZ-Nlg" firstAttribute="top" secondItem="Txl-ju-upb" secondAttribute="top" id="ebj-WS-jrE"/>
+                                            <constraint firstAttribute="bottom" secondItem="e1j-lZ-Nlg" secondAttribute="bottom" id="zNe-vO-Kze"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DeR-Az-h9o">
@@ -77,7 +94,7 @@
                                             <action selector="nextViewButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="uj1-nD-kCu"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xHv-U7-T3H">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xHv-U7-T3H" userLabel="SpacerView">
                                         <rect key="frame" x="0.0" y="753" width="393" height="6"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
