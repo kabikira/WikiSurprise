@@ -14,13 +14,28 @@ final class Router {
     private var window: UIWindow?
 
     func showRoot(window: UIWindow) {
-        guard let vc = UIStoryboard.init(name: "Article", bundle: nil).instantiateInitialViewController() else {
-            return
+        if !UserDefaults.standard.isLogined {
+            guard let vc = UIStoryboard.init(name: "AppIntroduction", bundle: nil).instantiateInitialViewController() else {
+                return
+            }
+            let nav = UINavigationController(rootViewController: vc)
+            window.rootViewController = nav
+
+        } else {
+            guard let vc = UIStoryboard.init(name: "Article", bundle: nil).instantiateInitialViewController() else {
+                return
+            }
+            let nav = UINavigationController(rootViewController: vc)
+            window.rootViewController =  nav
         }
-        let nav = UINavigationController(rootViewController: vc)
-        window.rootViewController =  nav
         window.makeKeyAndVisible()
         self.window = window
+    }
+    func showArticle(from: UIViewController) {
+        guard let Article = UIStoryboard.init(name: "Article", bundle: nil).instantiateInitialViewController() else {
+            return
+        }
+        show(from: from, to: Article)
     }
     func showWeb(from: UIViewController, articleModel: Article) {
         guard let web = UIStoryboard.init(name: "Web", bundle: nil).instantiateInitialViewController() as? WebViewController else {

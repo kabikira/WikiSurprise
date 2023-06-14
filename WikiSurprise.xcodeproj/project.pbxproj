@@ -33,6 +33,8 @@
 		3B6959082A2C9F8500EC3CE0 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6959072A2C9F8500EC3CE0 /* HistoryTableViewCell.swift */; };
 		3B783C832A36168300E20F8E /* WebViewError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B783C822A36168300E20F8E /* WebViewError.swift */; };
 		3B783C852A372E3700E20F8E /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B783C842A372E3700E20F8E /* NetworkMonitor.swift */; };
+		3B783C892A38BF7C00E20F8E /* AppIntroduction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B783C882A38BF7C00E20F8E /* AppIntroduction.storyboard */; };
+		3B783C8B2A38BF9400E20F8E /* AppIntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B783C8A2A38BF9400E20F8E /* AppIntroductionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		3B6959072A2C9F8500EC3CE0 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		3B783C822A36168300E20F8E /* WebViewError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewError.swift; sourceTree = "<group>"; };
 		3B783C842A372E3700E20F8E /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		3B783C882A38BF7C00E20F8E /* AppIntroduction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AppIntroduction.storyboard; sourceTree = "<group>"; };
+		3B783C8A2A38BF9400E20F8E /* AppIntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntroductionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,7 @@
 				3B6958CD2A2AE56000EC3CE0 /* AppDelegate.swift */,
 				3B6958CF2A2AE56000EC3CE0 /* SceneDelegate.swift */,
 				3B6958D62A2AE56100EC3CE0 /* Assets.xcassets */,
+				3B783C862A38BF2200E20F8E /* AppIntroduction */,
 				3B6958EB2A2C61E300EC3CE0 /* Article */,
 				3B6958FA2A2C67CF00EC3CE0 /* History */,
 				3B6958EC2A2C621B00EC3CE0 /* Web */,
@@ -231,6 +236,23 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		3B783C862A38BF2200E20F8E /* AppIntroduction */ = {
+			isa = PBXGroup;
+			children = (
+				3B783C872A38BF4400E20F8E /* Controller */,
+			);
+			path = AppIntroduction;
+			sourceTree = "<group>";
+		};
+		3B783C872A38BF4400E20F8E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3B783C882A38BF7C00E20F8E /* AppIntroduction.storyboard */,
+				3B783C8A2A38BF9400E20F8E /* AppIntroductionViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -293,6 +315,7 @@
 				3B6958F12A2C635B00EC3CE0 /* Article.storyboard in Resources */,
 				3B6958F52A2C639300EC3CE0 /* Web.storyboard in Resources */,
 				3B6958D72A2AE56100EC3CE0 /* Assets.xcassets in Resources */,
+				3B783C892A38BF7C00E20F8E /* AppIntroduction.storyboard in Resources */,
 				3B6959022A2C9EA400EC3CE0 /* ArticleTableViewCell.xib in Resources */,
 				3B6959062A2C9F6A00EC3CE0 /* HistoryTableViewCell.xib in Resources */,
 				3B6959002A2C9E5400EC3CE0 /* History.storyboard in Resources */,
@@ -322,6 +345,7 @@
 				3B6958E62A2C619F00EC3CE0 /* WikiAPI.swift in Sources */,
 				3B26E12C2A3362C400A18EEE /* WikiClientError.swift in Sources */,
 				3B6958D02A2AE56000EC3CE0 /* SceneDelegate.swift in Sources */,
+				3B783C8B2A38BF9400E20F8E /* AppIntroductionViewController.swift in Sources */,
 				3B783C852A372E3700E20F8E /* NetworkMonitor.swift in Sources */,
 				3B6958F72A2C63AF00EC3CE0 /* WebViewController.swift in Sources */,
 				3B26E1322A3453C700A18EEE /* WikiRequest.swift in Sources */,
