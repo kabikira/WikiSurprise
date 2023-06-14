@@ -28,13 +28,17 @@ final class ArticleViewController: UIViewController {
     }
 
     private var articles: [Article] = []
-
+    private let navigationTitle = "WikiSurprise"
+    private let backButtonTitle = "Back"
     private let getArticleErrorMessage = "記事の取得に失敗しました｡"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.isHidden = true
         indicator.isHidden = true
+        navigationItem.hidesBackButton = true
+        navigationItem.title = navigationTitle
+        navigationItem.backButtonTitle = backButtonTitle
         NetworkMonitor.shared.startMonitoring()
         NotificationCenter.default.addObserver(self, selector: #selector(connectionLost), name: NetworkMonitor.connectionLost, object: nil)
 
@@ -50,6 +54,7 @@ final class ArticleViewController: UIViewController {
     @objc func tapFetchArticleButton(_sender: UIButton) {
         indicator.isHidden = false
         tableView.isHidden = true
+        fetchArticleButton.isEnabled = false
         // APIクライアントの生成
         let client = WikiClient(httpClient: URLSession.shared)
         // リクエストの発行
@@ -59,6 +64,7 @@ final class ArticleViewController: UIViewController {
             DispatchQueue.main.async {
                 self.indicator.isHidden = true
                 self.tableView.isHidden = false
+                self.fetchArticleButton.isEnabled = true
                 switch result {
                 case .success(let response):
                     print(response)
