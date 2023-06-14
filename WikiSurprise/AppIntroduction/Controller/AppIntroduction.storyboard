@@ -22,16 +22,16 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ioL-Tx-fAY">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="683"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="613"/>
                                         <subviews>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yPe-uK-Gti">
-                                                <rect key="frame" x="0.0" y="0.0" width="393" height="683"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="613"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X38-K6-bi7" userLabel="Container View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="1500" height="683"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="1500" height="613"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5c1-tr-iv5">
-                                                                <rect key="frame" x="0.0" y="0.0" width="1500" height="683"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="1500" height="613"/>
                                                             </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -55,15 +55,19 @@
                                                 <viewLayoutGuide key="frameLayoutGuide" id="drc-03-bBs"/>
                                             </scrollView>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="yPe-uK-Gti" secondAttribute="trailing" id="DTS-HE-UXF"/>
-                                            <constraint firstItem="yPe-uK-Gti" firstAttribute="leading" secondItem="ioL-Tx-fAY" secondAttribute="leading" id="SrB-Oj-2R9"/>
-                                            <constraint firstItem="yPe-uK-Gti" firstAttribute="top" secondItem="ioL-Tx-fAY" secondAttribute="top" id="ykp-mE-yJd"/>
-                                            <constraint firstAttribute="bottom" secondItem="yPe-uK-Gti" secondAttribute="bottom" id="zx4-q1-7Gp"/>
-                                        </constraints>
                                     </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Txl-ju-upb">
+                                        <rect key="frame" x="0.0" y="613" width="393" height="70"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="2wJ-aS-Bs5"/>
+                                        </constraints>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DeR-Az-h9o">
                                         <rect key="frame" x="0.0" y="683" width="393" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="zcd-w1-RoN"/>
+                                        </constraints>
                                         <color key="tintColor" name="AccentColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="説明を閉じる" cornerStyle="capsule">
@@ -81,12 +85,6 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="ioL-Tx-fAY" secondAttribute="trailing" id="3Au-zh-QgV"/>
-                                    <constraint firstItem="ioL-Tx-fAY" firstAttribute="top" secondItem="ksh-bO-Kiv" secondAttribute="top" id="E8w-fZ-LOQ"/>
-                                    <constraint firstItem="ioL-Tx-fAY" firstAttribute="leading" secondItem="ksh-bO-Kiv" secondAttribute="leading" id="Zod-CD-SFF"/>
-                                    <constraint firstItem="xHv-U7-T3H" firstAttribute="bottom" secondItem="ioL-Tx-fAY" secondAttribute="bottom" constant="76" id="bPJ-fo-hho"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
