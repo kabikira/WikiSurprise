@@ -30,6 +30,7 @@ final class WebViewController: UIViewController {
         webView.navigationDelegate = self
         webView.isHidden = true
         indicator.isHidden = false
+        indicator.startAnimating()
         connectionErrorView.isHidden = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refreshWebView))
         guard
@@ -74,6 +75,7 @@ extension WebViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         print("WebView did finish loading.")
         indicator.isHidden = true
+        indicator.stopAnimating()
         connectionErrorView.isHidden = true
     }
 

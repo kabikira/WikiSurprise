@@ -53,6 +53,7 @@ final class ArticleViewController: UIViewController {
 
     @objc func tapFetchArticleButton(_sender: UIButton) {
         indicator.isHidden = false
+        indicator.startAnimating()
         tableView.isHidden = true
         fetchArticleButton.isEnabled = false
         // APIクライアントの生成
@@ -63,6 +64,7 @@ final class ArticleViewController: UIViewController {
         client.send(request: request) { result in
             DispatchQueue.main.async {
                 self.indicator.isHidden = true
+                self.indicator.stopAnimating()
                 self.tableView.isHidden = false
                 self.fetchArticleButton.isEnabled = true
                 switch result {
@@ -94,7 +96,9 @@ extension ArticleViewController: UITableViewDelegate {
         // 画面遷移後にUITableViewのセルが選択状態のままになってしまうのを防ぐ
         tableView.deselectRow(at: indexPath, animated: true)
         // ルーターで画面遷移処理
-        Router.shared.showWeb(from: self, articleModel: articles[indexPath.row])        }
+        Router.shared.showWeb(from: self, articleModel: articles[indexPath.row])
+
+    }
 }
 
 
