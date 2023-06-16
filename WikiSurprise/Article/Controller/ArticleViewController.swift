@@ -42,14 +42,14 @@ final class ArticleViewController: UIViewController {
         navigationItem.title = navigationTitle
         navigationItem.backButtonTitle = backButtonTitle
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title:rightBarButtonTitle, style: .done, target: self, action: #selector(showInfo))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title:rightBarButtonTitle, style: .done, target: self, action: #selector(tappedInfo))
 
         NetworkMonitor.shared.startMonitoring()
         NotificationCenter.default.addObserver(self, selector: #selector(connectionLost), name: NetworkMonitor.connectionLost, object: nil)
 
     }
 
-    @objc func showInfo() {
+    @objc func tappedInfo() {
         print("test")
 
     }
