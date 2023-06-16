@@ -35,6 +35,9 @@
 		3B783C852A372E3700E20F8E /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B783C842A372E3700E20F8E /* NetworkMonitor.swift */; };
 		3B783C892A38BF7C00E20F8E /* AppIntroduction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B783C882A38BF7C00E20F8E /* AppIntroduction.storyboard */; };
 		3B783C8B2A38BF9400E20F8E /* AppIntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B783C8A2A38BF9400E20F8E /* AppIntroductionViewController.swift */; };
+		3B7CE6472A3C85AC005E6F30 /* InfoViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B7CE6462A3C85AC005E6F30 /* InfoViewCell.xib */; };
+		3B7CE6492A3C85C7005E6F30 /* InfoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7CE6482A3C85C7005E6F30 /* InfoViewCell.swift */; };
+		3B7CE64B2A3C862F005E6F30 /* InfoItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7CE64A2A3C862F005E6F30 /* InfoItemModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +71,9 @@
 		3B783C842A372E3700E20F8E /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		3B783C882A38BF7C00E20F8E /* AppIntroduction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AppIntroduction.storyboard; sourceTree = "<group>"; };
 		3B783C8A2A38BF9400E20F8E /* AppIntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntroductionViewController.swift; sourceTree = "<group>"; };
+		3B7CE6462A3C85AC005E6F30 /* InfoViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoViewCell.xib; sourceTree = "<group>"; };
+		3B7CE6482A3C85C7005E6F30 /* InfoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewCell.swift; sourceTree = "<group>"; };
+		3B7CE64A2A3C862F005E6F30 /* InfoItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoItemModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +140,7 @@
 				3B6958CF2A2AE56000EC3CE0 /* SceneDelegate.swift */,
 				3B6958D62A2AE56100EC3CE0 /* Assets.xcassets */,
 				3B783C862A38BF2200E20F8E /* AppIntroduction */,
+				3B7CE6432A3C8532005E6F30 /* Info */,
 				3B6958EB2A2C61E300EC3CE0 /* Article */,
 				3B6958FA2A2C67CF00EC3CE0 /* History */,
 				3B6958EC2A2C621B00EC3CE0 /* Web */,
@@ -149,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				3B6958E92A2C61D300EC3CE0 /* WikiModel.swift */,
+				3B7CE64A2A3C862F005E6F30 /* InfoItemModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -253,6 +261,31 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		3B7CE6432A3C8532005E6F30 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				3B7CE6442A3C8540005E6F30 /* View */,
+				3B7CE6452A3C854A005E6F30 /* Controller */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		3B7CE6442A3C8540005E6F30 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3B7CE6462A3C85AC005E6F30 /* InfoViewCell.xib */,
+				3B7CE6482A3C85C7005E6F30 /* InfoViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3B7CE6452A3C854A005E6F30 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -312,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B6958DA2A2AE56100EC3CE0 /* LaunchScreen.storyboard in Resources */,
+				3B7CE6472A3C85AC005E6F30 /* InfoViewCell.xib in Resources */,
 				3B6958F12A2C635B00EC3CE0 /* Article.storyboard in Resources */,
 				3B6958F52A2C639300EC3CE0 /* Web.storyboard in Resources */,
 				3B6958D72A2AE56100EC3CE0 /* Assets.xcassets in Resources */,
@@ -332,6 +366,7 @@
 				3B6958F92A2C647800EC3CE0 /* UserDefaults+.swift in Sources */,
 				3B26E12E2A33746E00A18EEE /* WikiAPIError.swift in Sources */,
 				3B6958EA2A2C61D300EC3CE0 /* WikiModel.swift in Sources */,
+				3B7CE6492A3C85C7005E6F30 /* InfoViewCell.swift in Sources */,
 				3B26E1382A355B5000A18EEE /* WikiClient.swift in Sources */,
 				3B783C832A36168300E20F8E /* WebViewError.swift in Sources */,
 				3B6958FE2A2C9E3F00EC3CE0 /* HistoryViewController.swift in Sources */,
@@ -348,6 +383,7 @@
 				3B783C8B2A38BF9400E20F8E /* AppIntroductionViewController.swift in Sources */,
 				3B783C852A372E3700E20F8E /* NetworkMonitor.swift in Sources */,
 				3B6958F72A2C63AF00EC3CE0 /* WebViewController.swift in Sources */,
+				3B7CE64B2A3C862F005E6F30 /* InfoItemModel.swift in Sources */,
 				3B26E1322A3453C700A18EEE /* WikiRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

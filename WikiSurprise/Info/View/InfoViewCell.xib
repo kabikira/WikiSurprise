@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Env-ZG-gYN" customClass="InfoViewCell" customModule="WikiSurprise" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FSo-ec-L7M">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vip-qK-8VW">
+                            <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmM-vN-S19">
+                                    <rect key="frame" x="6" y="6" width="68" height="88"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="gmM-vN-S19" secondAttribute="trailing" constant="6" id="1jH-NE-ese"/>
+                                <constraint firstAttribute="width" constant="80" id="ABy-pb-7ss"/>
+                                <constraint firstItem="gmM-vN-S19" firstAttribute="leading" secondItem="Vip-qK-8VW" secondAttribute="leading" constant="6" id="KDl-bM-XeX"/>
+                                <constraint firstAttribute="bottom" secondItem="gmM-vN-S19" secondAttribute="bottom" constant="6" id="f2x-r8-gtC"/>
+                                <constraint firstItem="gmM-vN-S19" firstAttribute="top" secondItem="Vip-qK-8VW" secondAttribute="top" constant="6" id="fE3-VL-oVV"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UsU-F9-req">
+                            <rect key="frame" x="80" y="0.0" width="313" height="100"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjz-xK-OAq">
+                                    <rect key="frame" x="6" y="0.0" width="307" height="100"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="pjz-xK-OAq" secondAttribute="bottom" id="UuC-qV-39Y"/>
+                                <constraint firstAttribute="trailing" secondItem="pjz-xK-OAq" secondAttribute="trailing" id="Zsm-Vi-tFt"/>
+                                <constraint firstItem="pjz-xK-OAq" firstAttribute="top" secondItem="UsU-F9-req" secondAttribute="top" id="hm1-Dm-1GO"/>
+                                <constraint firstItem="pjz-xK-OAq" firstAttribute="leading" secondItem="UsU-F9-req" secondAttribute="leading" constant="6" id="vq6-bW-nEE"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Yp0-ht-61j"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="FSo-ec-L7M" firstAttribute="top" secondItem="Env-ZG-gYN" secondAttribute="top" id="5hO-O7-SId"/>
+                <constraint firstItem="FSo-ec-L7M" firstAttribute="bottom" secondItem="Env-ZG-gYN" secondAttribute="bottom" priority="750" id="Awv-GH-BAR"/>
+                <constraint firstAttribute="trailing" secondItem="FSo-ec-L7M" secondAttribute="trailing" id="DOj-pH-FXu"/>
+                <constraint firstItem="FSo-ec-L7M" firstAttribute="leading" secondItem="Env-ZG-gYN" secondAttribute="leading" id="PGm-rc-ape"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="emojiLabel" destination="gmM-vN-S19" id="gpN-QS-uS5"/>
+                <outlet property="titleLabel" destination="pjz-xK-OAq" id="WBb-Hu-YXM"/>
+            </connections>
+            <point key="canvasLocation" x="116.79389312977099" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
