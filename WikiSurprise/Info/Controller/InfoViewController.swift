@@ -51,6 +51,6 @@ extension InfoViewController: UITableViewDataSource {
 
 extension InfoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        Router.shared.showInfoItems(from: self, infoItem: infoItems[indexPath.row])
     }
 }

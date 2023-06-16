@@ -51,6 +51,22 @@ final class Router {
         }
         show(from: from, to: info)
     }
+    func showInfoItems(from: UIViewController, infoItem: InfoItem) {
+        // TODO 画面遷移の分岐
+        switch infoItem.title {
+        case infoItems[0].title:
+            print("説明")
+        case infoItems[1].title:
+            print("お問い合わせ")
+        case infoItems[2].title:
+            print("プライバシー")
+        case infoItems[3].title:
+            print("Ver")
+        default:
+            break
+        }
+    }
+    
     private func show(from: UIViewController, to: UIViewController, completion:(() -> Void)? = nil) {
         if let nav = from.navigationController {
             nav.pushViewController(to, animated: true)
