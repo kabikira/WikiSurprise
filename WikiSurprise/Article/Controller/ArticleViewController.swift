@@ -50,7 +50,7 @@ final class ArticleViewController: UIViewController {
     }
 
     @objc func tappedInfo() {
-        print("test")
+        Router.shared.showInfo(from: self)
 
     }
 

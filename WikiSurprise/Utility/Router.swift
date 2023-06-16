@@ -44,6 +44,13 @@ final class Router {
         web.configure(wikiArticle: articleModel)
         show(from: from, to: web)
     }
+
+    func showInfo(from: UIViewController) {
+        guard let info = UIStoryboard.init(name: "Info", bundle: nil).instantiateInitialViewController() as? InfoViewController else {
+            return
+        }
+        show(from: from, to: info)
+    }
     private func show(from: UIViewController, to: UIViewController, completion:(() -> Void)? = nil) {
         if let nav = from.navigationController {
             nav.pushViewController(to, animated: true)
