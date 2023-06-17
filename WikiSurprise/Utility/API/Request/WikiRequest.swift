@@ -8,7 +8,7 @@
 
 import Foundation
 // リクエストとして必要なものをまとめるプロトコル
-public protocol WikiRequest {
+protocol WikiRequest {
     associatedtype Response: Decodable
     var baseURL: URL { get }
     // パス"/w/api.php"
@@ -18,7 +18,7 @@ public protocol WikiRequest {
     var queryItems: [URLQueryItem] { get }
 }
 
-public extension WikiRequest {
+extension WikiRequest {
     var baseURL: URL {
         return URL(string: "https://ja.wikipedia.org")!
     }
@@ -38,7 +38,7 @@ public extension WikiRequest {
         urlRequest.url = components?.url
         urlRequest.httpMethod = method.rawValue
 
-        // タイムアウトを60秒に設定
+        // リファレンスによるとデフォルトで60秒に設定されているようなので60秒で指定しても意味がないかもしれない
         urlRequest.timeoutInterval = 60
 
         return urlRequest

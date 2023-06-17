@@ -10,19 +10,16 @@ import UIKit
 
 final class InfoViewCell: UITableViewCell {
 
-
     @IBOutlet private weak var emojiLabel: UILabel!
     @IBOutlet private weak var titleLabel: UILabel!
     static var className: String { String(describing: InfoViewCell.self)}
 
-    override func prepareForReuse() {
+    override public func prepareForReuse() {
         super.prepareForReuse()
         emojiLabel.text = nil
         titleLabel.text = nil
-
     }
-
-    func configure(infoItem: InfoItem) {
+   func configure(infoItem: InfoItem) {
         self.emojiLabel.text = infoItem.emoji
         self.titleLabel.text = infoItem.title
     }

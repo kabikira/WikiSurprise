@@ -7,13 +7,13 @@
 
 import Foundation
 
-public class WikiClient {
+class WikiClient {
     private let httpClient: HTTPClient
-    public init(httpClient: HTTPClient) {
+    init(httpClient: HTTPClient) {
         self.httpClient = httpClient
     }
 
-    public func send<Request: WikiRequest>(request: Request,
+    func send<Request: WikiRequest>(request: Request,
         completion: @escaping(Result<Request.Response, WikiClientError>) -> Void) {
         let urlRequest = request.buildURLRequest()
         // TableViewでデータを表示する際は、このクロージャで受け取った結果を利用してTableViewを更新します。

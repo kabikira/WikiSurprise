@@ -7,12 +7,12 @@
 
 import Foundation
 
-public protocol HTTPClient {
+protocol HTTPClient {
     func sendRequest(_ urlRequest: URLRequest, completion: @escaping (Result<(Data, HTTPURLResponse), Error>) -> Void)
 }
 
 extension URLSession: HTTPClient {
-    public func sendRequest(_ urlRequest: URLRequest, completion: @escaping (Result<(Data, HTTPURLResponse), Error>) -> Void) {
+    func sendRequest(_ urlRequest: URLRequest, completion: @escaping (Result<(Data, HTTPURLResponse), Error>) -> Void) {
         let task = dataTask(with: urlRequest) { data, urlResponse, error in
             switch (data, urlResponse, error) {
             case (_, _, let error?):

@@ -7,13 +7,12 @@
 
 import UIKit
 
-class AppIntroductionViewController: UIViewController {
+final class AppIntroductionViewController: UIViewController {
 
     private let image: UIImage! = UIImage(named: "WikiSurprise")
     @IBOutlet private weak var intorductionImage: UIImageView! {
         didSet {
             intorductionImage.image = image
-
         }
     }
     @IBOutlet private weak var doneButton: UIButton! {
@@ -28,7 +27,6 @@ class AppIntroductionViewController: UIViewController {
         doneButton.isEnabled = false
         Router.shared.showArticle(from: self)
     }
-
     @IBOutlet private weak var closeButton: UIButton! {
         didSet {
             if isBeingPresented {
@@ -41,6 +39,4 @@ class AppIntroductionViewController: UIViewController {
     @IBAction private func closeModalButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-
-
 }

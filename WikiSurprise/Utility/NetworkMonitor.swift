@@ -11,9 +11,7 @@ import Network
 
 final class NetworkMonitor {
     static let shared = NetworkMonitor()
-
     private let monitor: NWPathMonitor
-
     static let connectionLost = Notification.Name("ネットワーク接続が切断されました｡")
 
     private init() {

@@ -15,9 +15,7 @@ final class WebViewController: UIViewController {
             webView.navigationDelegate = self
         }
     }
-
     @IBOutlet private weak var indicator: UIActivityIndicatorView!
-
     @IBOutlet private weak var connectionErrorView: UIView!
 
     private var wikiArticle: Article?
@@ -37,7 +35,6 @@ final class WebViewController: UIViewController {
             let wikiArticle = wikiArticle,
             let url = URL(string: wikiArticle.urlStr) else {
             showError(WebViewError.connectionError.description)
-
             return
         }
         DispatchQueue.global(qos: .userInitiated).async {
@@ -57,7 +54,6 @@ final class WebViewController: UIViewController {
     @objc func refreshWebView() {
         webView.reload()
     }
-
 }
 
 extension WebViewController: WKNavigationDelegate {

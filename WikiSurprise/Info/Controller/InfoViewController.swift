@@ -9,10 +9,11 @@ import UIKit
 
 final class InfoViewController: UIViewController {
 
-    private let image: UIImage! = UIImage(named: "icon")
     @IBOutlet private weak var iconImage: UIImageView! {
         didSet {
-            iconImage.image = image
+            if let image: UIImage = UIImage(named: "icon") {
+                iconImage.image = image
+            }
         }
     }
     @IBOutlet private weak var tableView: UITableView! {
@@ -23,19 +24,13 @@ final class InfoViewController: UIViewController {
             tableView.reloadData()
         }
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-
 }
 extension InfoViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         infoItems.count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: InfoViewCell.className) as? InfoViewCell else {
             fatalError()
         }

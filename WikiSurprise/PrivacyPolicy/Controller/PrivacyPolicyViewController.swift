@@ -29,7 +29,6 @@ final class PrivacyPolicyViewController: UIViewController {
         guard
             let url = URL(string: privacyPolicyURL) else {
             showError(WebViewError.connectionError.description)
-
             return
         }
         DispatchQueue.global(qos: .userInitiated).async {
@@ -39,19 +38,15 @@ final class PrivacyPolicyViewController: UIViewController {
                 self.webView.isHidden = false
             }
         }
-
     }
-
     private func showError(_ message: String) {
             let alert = UIAlertController(title: "エラー", message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
-
     @objc func refreshWebView() {
         webView.reload()
     }
-
 }
 extension PrivacyPolicyViewController: WKNavigationDelegate {
     // ページの読み込み失敗
@@ -70,5 +65,4 @@ extension PrivacyPolicyViewController: WKNavigationDelegate {
         indicator.isHidden = true
         connectionErrorView.isHidden = true
     }
-
 }
