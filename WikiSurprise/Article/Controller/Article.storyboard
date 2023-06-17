@@ -27,9 +27,6 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="683"/>
                                                 <sections/>
                                             </tableView>
-                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Zvq-DK-9TH">
-                                                <rect key="frame" x="186.66666666666666" y="331.66666666666669" width="20" height="20"/>
-                                            </activityIndicatorView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UNn-Sp-coE">
                                                 <rect key="frame" x="121.66666666666669" y="266.66666666666669" width="150" height="150"/>
                                                 <constraints>
@@ -37,6 +34,9 @@
                                                     <constraint firstAttribute="width" constant="150" id="NAy-vV-Ayi"/>
                                                 </constraints>
                                             </imageView>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Zvq-DK-9TH">
+                                                <rect key="frame" x="186.66666666666666" y="331.66666666666669" width="20" height="20"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
