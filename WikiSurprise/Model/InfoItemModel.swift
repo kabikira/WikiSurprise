@@ -8,12 +8,12 @@
 import Foundation
 
 
-public struct InfoItem {
+struct InfoItem {
     let emoji: String
     let title: String
 }
 
-public let infoItems: [InfoItem] = [
+let infoItems: [InfoItem] = [
     InfoItem(emoji: "👀", title: "アプリの説明"),
     InfoItem(emoji: "✉️", title: "お問い合わせ"),
     InfoItem(emoji: "📝", title: "プライバシーポリシー"),

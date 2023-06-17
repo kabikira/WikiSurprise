@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum WebViewError: Error {
+enum WebViewError: Error {
     case error
     case connectionError
     case pageLoadError
@@ -15,7 +15,7 @@ public enum WebViewError: Error {
 }
 
 extension WebViewError: CustomStringConvertible {
-    public var description: String {
+    var description: String {
         switch self {
         case .error:
             return "エラーです｡"
