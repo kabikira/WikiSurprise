@@ -16,6 +16,26 @@ final class ArticleViewController: UIViewController {
     private let getArticleErrorMessage = "記事の取得に失敗しました｡"
     private let rightBarButtonTitle = "info"
 
+    @IBOutlet weak var motionImageView: UIImageView! {
+        didSet {
+            if let image: UIImage = UIImage(named: "icon") {
+                motionImageView.image = image
+            }
+            // 水平方向
+            let xMotion = UIInterpolatingMotionEffect(keyPath: "center.x", type: UIInterpolatingMotionEffect.EffectType.tiltAlongHorizontalAxis)
+            // 左右の動きの幅
+            xMotion.minimumRelativeValue = -200.0
+            xMotion.maximumRelativeValue = 200.0
+            // 垂直方向
+            let yMotion = UIInterpolatingMotionEffect(keyPath: "center.y", type: UIInterpolatingMotionEffect.EffectType.tiltAlongVerticalAxis)
+            // 上下の動きの幅
+            yMotion.minimumRelativeValue = -200.0
+            yMotion.maximumRelativeValue = 200.0
+            // モーションエフェクトの指定
+            motionImageView.motionEffects = [xMotion, yMotion]
+        }
+    }
+
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
             tableView.register(UINib.init(nibName: ArticleTableViewCell.className, bundle: nil), forCellReuseIdentifier: ArticleTableViewCell.className)
@@ -68,6 +88,7 @@ final class ArticleViewController: UIViewController {
                 self.indicator.isHidden = true
                 self.indicator.stopAnimating()
                 self.tableView.isHidden = false
+                self.motionImageView.isHidden = true
                 self.fetchArticleButton.isEnabled = true
                 switch result {
                 case .success(let response):
