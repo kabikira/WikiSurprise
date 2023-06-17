@@ -9,10 +9,11 @@ import UIKit
 
 final class AppIntroductionViewController: UIViewController {
 
-    private let image: UIImage! = UIImage(named: "WikiSurprise")
     @IBOutlet private weak var intorductionImage: UIImageView! {
         didSet {
-            intorductionImage.image = image
+            if let image: UIImage = UIImage(named: "WikiSurprise") {
+                intorductionImage.image = image
+            }
         }
     }
     @IBOutlet private weak var doneButton: UIButton! {
