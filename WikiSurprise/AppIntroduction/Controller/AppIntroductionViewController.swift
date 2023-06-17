@@ -17,7 +17,13 @@ class AppIntroductionViewController: UIViewController {
 
         }
     }
-    @IBOutlet private weak var doneButton: UIButton!
+    @IBOutlet private weak var doneButton: UIButton! {
+        didSet {
+            if UserDefaults.standard.isLogined {
+                doneButton.isHidden = true
+            }
+        }
+    }
 
     @IBAction private func nextViewButton(_ sender: Any) {
         UserDefaults.standard.isLogined = true
