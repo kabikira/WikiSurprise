@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InfoViewController: UIViewController {
+final class InfoViewController: UIViewController {
 
     private let image: UIImage! = UIImage(named: "icon")
     @IBOutlet private weak var iconImage: UIImageView! {
@@ -24,13 +24,10 @@ class InfoViewController: UIViewController {
         }
     }
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
-    
-
 
 }
 extension InfoViewController: UITableViewDataSource {
