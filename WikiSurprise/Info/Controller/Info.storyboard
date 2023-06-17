@@ -21,13 +21,13 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5gV-IH-iU7">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="300"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="360.66666666666669"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FgD-gM-CeZ">
-                                                <rect key="frame" x="10" y="10" width="373" height="280"/>
+                                                <rect key="frame" x="10" y="10" width="373" height="340.66666666666669"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="29k-83-9Cn">
-                                                        <rect key="frame" x="0.0" y="0.0" width="373" height="280"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="373" height="340.66666666666669"/>
                                                     </imageView>
                                                 </subviews>
                                             </stackView>
@@ -37,12 +37,11 @@
                                             <constraint firstAttribute="trailing" secondItem="FgD-gM-CeZ" secondAttribute="trailing" constant="10" id="ekC-uW-5qS"/>
                                             <constraint firstAttribute="bottom" secondItem="FgD-gM-CeZ" secondAttribute="bottom" constant="10" id="elj-DC-wDV"/>
                                             <constraint firstItem="FgD-gM-CeZ" firstAttribute="top" secondItem="5gV-IH-iU7" secondAttribute="top" constant="10" id="fj1-iZ-Hy3"/>
-                                            <constraint firstAttribute="height" constant="300" id="s0C-m5-3XC"/>
                                             <constraint firstItem="FgD-gM-CeZ" firstAttribute="leading" secondItem="5gV-IH-iU7" secondAttribute="leading" constant="10" id="tAx-F8-RtH"/>
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4Kw-ql-eIi">
-                                        <rect key="frame" x="0.0" y="300" width="393" height="459"/>
+                                        <rect key="frame" x="0.0" y="360.66666666666674" width="393" height="398.33333333333326"/>
                                         <sections/>
                                     </tableView>
                                 </subviews>
@@ -54,6 +53,7 @@
                         <constraints>
                             <constraint firstItem="wUz-Xp-H9c" firstAttribute="top" secondItem="ZD4-kK-KKN" secondAttribute="top" id="05N-Oj-6Js"/>
                             <constraint firstItem="ZD4-kK-KKN" firstAttribute="bottom" secondItem="wUz-Xp-H9c" secondAttribute="bottom" id="3pZ-nJ-WKl"/>
+                            <constraint firstItem="FgD-gM-CeZ" firstAttribute="height" secondItem="qYb-tz-Ki7" secondAttribute="height" multiplier="0.4" id="4XC-4j-fqd"/>
                             <constraint firstItem="wUz-Xp-H9c" firstAttribute="leading" secondItem="ZD4-kK-KKN" secondAttribute="leading" id="Sn1-zT-2K4"/>
                             <constraint firstItem="ZD4-kK-KKN" firstAttribute="trailing" secondItem="wUz-Xp-H9c" secondAttribute="trailing" id="wXd-vf-dU3"/>
                         </constraints>
