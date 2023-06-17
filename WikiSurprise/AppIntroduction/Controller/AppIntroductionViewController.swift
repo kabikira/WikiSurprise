@@ -10,7 +10,6 @@ import UIKit
 class AppIntroductionViewController: UIViewController {
 
     private let image: UIImage! = UIImage(named: "WikiSurprise")
-
     @IBOutlet private weak var intorductionImage: UIImageView! {
         didSet {
             intorductionImage.image = image
@@ -24,12 +23,24 @@ class AppIntroductionViewController: UIViewController {
             }
         }
     }
-
     @IBAction private func nextViewButton(_ sender: Any) {
         UserDefaults.standard.isLogined = true
         doneButton.isEnabled = false
         Router.shared.showArticle(from: self)
     }
-    
+
+    @IBOutlet private weak var closeButton: UIButton! {
+        didSet {
+            if isBeingPresented {
+                closeButton.isHidden = false
+            } else {
+                closeButton.isHidden = true
+            }
+        }
+    }
+    @IBAction private func closeModalButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+
 
 }
