@@ -60,15 +60,22 @@ final class Router {
             guard let appintorduction = UIStoryboard.init(name: "AppIntroduction", bundle: nil).instantiateInitialViewController() else {
                 return
             }
-            show(from: from, to: appintorduction)
+            showPresent(from: from, to: appintorduction)
         case infoItems[1].title:
             print("お問い合わせ")
+            // サファリを開いて表示、WebViewで表示するかどちらがいいのかわからない
+            if let url = URL(string: "https://docs.google.com/forms/d/e/1FAIpQLSfpFrJaXEElgvXTiovIgSMzstFfu5rATe4pc4L8lIe12MiXWw/viewform") {
+                if UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+            }
+
         case infoItems[2].title:
             print("プライバシー")
             guard let privacyPolicy = UIStoryboard.init(name: "PrivacyPolicy", bundle: nil).instantiateInitialViewController() else {
                 return
             }
-            show(from: from, to: privacyPolicy)
+            showPresent(from: from, to: privacyPolicy)
         case infoItems[3].title:
             print("Ver")
         default:
@@ -83,6 +90,9 @@ final class Router {
         } else {
             from.present(to, animated: true, completion: completion)
         }
+    }
+    private func showPresent(from: UIViewController,to: UIViewController) {
+        from.present(to , animated: true)
     }
 }
 
