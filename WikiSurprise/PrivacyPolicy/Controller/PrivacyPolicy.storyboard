@@ -30,6 +30,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="393" height="30"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="閉じる"/>
+                                                        <connections>
+                                                            <action selector="closeModalButton:" destination="zi8-9m-kE7" eventType="touchUpInside" id="Pfg-hR-Efa"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -110,6 +113,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="closeButton" destination="e2o-D8-WMk" id="0a6-IQ-6f5"/>
                         <outlet property="connectionErrorView" destination="Thq-Je-Bxb" id="mk4-tZ-p50"/>
                         <outlet property="indicator" destination="aQT-65-D0O" id="gDN-Eh-BrT"/>
                         <outlet property="webView" destination="s07-Ax-dbs" id="hsj-3P-EOB"/>
