@@ -21,17 +21,41 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ksh-bO-Kiv">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="hBU-RW-a1k">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="30"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rn1-cw-gDd">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qaz-Eh-ySF">
+                                                        <rect key="frame" x="0.0" y="0.0" width="393" height="30"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="閉じる"/>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="Qaz-Eh-ySF" firstAttribute="leading" secondItem="rn1-cw-gDd" secondAttribute="leading" id="aar-Ao-g1D"/>
+                                                    <constraint firstItem="Qaz-Eh-ySF" firstAttribute="top" secondItem="rn1-cw-gDd" secondAttribute="top" id="awz-Kt-gpb"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Qaz-Eh-ySF" secondAttribute="trailing" id="uXv-7d-jpq"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Qaz-Eh-ySF" secondAttribute="bottom" id="zh0-yx-npO"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Ud9-Vd-0Lc"/>
+                                        </constraints>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ioL-Tx-fAY">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="613"/>
+                                        <rect key="frame" x="0.0" y="30" width="393" height="583"/>
                                         <subviews>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yPe-uK-Gti">
-                                                <rect key="frame" x="0.0" y="0.0" width="393" height="613"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="583"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X38-K6-bi7" userLabel="Container View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="800" height="613"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="800" height="583"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5c1-tr-iv5">
-                                                                <rect key="frame" x="0.0" y="0.0" width="800" height="613"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="800" height="583"/>
                                                             </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
