@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zi8-9m-kE7">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Privacy Policy View Controller-->
+        <scene sceneID="bqQ-B7-yoC">
+            <objects>
+                <viewController id="zi8-9m-kE7" customClass="PrivacyPolicyViewController" customModule="WikiSurprise" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="40i-5I-52e">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s07-Ax-dbs">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="aQT-65-D0O">
+                                <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Thq-Je-Bxb">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aKB-90-Egz">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="インターネットに接続されていません" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYF-ym-ydr">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="aKB-90-Egz" secondAttribute="trailing" id="8P1-NO-mDn"/>
+                                    <constraint firstItem="aKB-90-Egz" firstAttribute="top" secondItem="Thq-Je-Bxb" secondAttribute="top" id="FRd-HB-q7b"/>
+                                    <constraint firstItem="aKB-90-Egz" firstAttribute="leading" secondItem="Thq-Je-Bxb" secondAttribute="leading" id="FUs-px-uBK"/>
+                                    <constraint firstAttribute="bottom" secondItem="aKB-90-Egz" secondAttribute="bottom" id="lVO-NB-gEa"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7hh-cp-3WH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7hh-cp-3WH" firstAttribute="trailing" secondItem="Thq-Je-Bxb" secondAttribute="trailing" id="9dB-RC-Fgg"/>
+                            <constraint firstItem="Thq-Je-Bxb" firstAttribute="leading" secondItem="7hh-cp-3WH" secondAttribute="leading" id="BAJ-Jt-mgJ"/>
+                            <constraint firstItem="aQT-65-D0O" firstAttribute="centerY" secondItem="40i-5I-52e" secondAttribute="centerY" id="Fa5-Bl-hv6"/>
+                            <constraint firstItem="s07-Ax-dbs" firstAttribute="leading" secondItem="7hh-cp-3WH" secondAttribute="leading" id="PeH-xX-nwD"/>
+                            <constraint firstItem="7hh-cp-3WH" firstAttribute="bottom" secondItem="Thq-Je-Bxb" secondAttribute="bottom" id="WyY-Rq-jYm"/>
+                            <constraint firstItem="s07-Ax-dbs" firstAttribute="top" secondItem="7hh-cp-3WH" secondAttribute="top" id="erb-Xp-IWR"/>
+                            <constraint firstItem="7hh-cp-3WH" firstAttribute="trailing" secondItem="s07-Ax-dbs" secondAttribute="trailing" id="keg-nr-DX0"/>
+                            <constraint firstItem="7hh-cp-3WH" firstAttribute="bottom" secondItem="s07-Ax-dbs" secondAttribute="bottom" id="ntt-Oy-ypm"/>
+                            <constraint firstItem="Thq-Je-Bxb" firstAttribute="top" secondItem="7hh-cp-3WH" secondAttribute="top" id="yg6-z9-dJQ"/>
+                            <constraint firstItem="aQT-65-D0O" firstAttribute="centerX" secondItem="40i-5I-52e" secondAttribute="centerX" id="ziF-0J-fgU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="connectionErrorView" destination="Thq-Je-Bxb" id="mk4-tZ-p50"/>
+                        <outlet property="indicator" destination="aQT-65-D0O" id="gDN-Eh-BrT"/>
+                        <outlet property="webView" destination="s07-Ax-dbs" id="hsj-3P-EOB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DLV-Q1-2pu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="12" y="-2"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

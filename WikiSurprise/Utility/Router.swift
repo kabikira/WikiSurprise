@@ -44,6 +44,45 @@ final class Router {
         web.configure(wikiArticle: articleModel)
         show(from: from, to: web)
     }
+
+    func showInfo(from: UIViewController) {
+        guard let info = UIStoryboard.init(name: "Info", bundle: nil).instantiateInitialViewController() as? InfoViewController else {
+            return
+        }
+        show(from: from, to: info)
+    }
+    func showInfoItems(from: UIViewController, infoItem: InfoItem) {
+        //  InfoViewContorollerで分岐してRouterにそれぞれのshowメソッドを実装したほうがいいかもしれない
+        // TODO 画面遷移の分岐
+        switch infoItem.title {
+        case infoItems[0].title:
+            print("説明")
+            guard let appintorduction = UIStoryboard.init(name: "AppIntroduction", bundle: nil).instantiateInitialViewController() else {
+                return
+            }
+            showPresent(from: from, to: appintorduction)
+        case infoItems[1].title:
+            print("お問い合わせ")
+            // サファリを開いて表示、WebViewで表示するかどちらがいいのかわからない
+            if let url = URL(string: "https://docs.google.com/forms/d/e/1FAIpQLSfpFrJaXEElgvXTiovIgSMzstFfu5rATe4pc4L8lIe12MiXWw/viewform") {
+                if UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+            }
+
+        case infoItems[2].title:
+            print("プライバシー")
+            guard let privacyPolicy = UIStoryboard.init(name: "PrivacyPolicy", bundle: nil).instantiateInitialViewController() else {
+                return
+            }
+            showPresent(from: from, to: privacyPolicy)
+        case infoItems[3].title:
+            print("Ver")
+        default:
+            break
+        }
+    }
+    
     private func show(from: UIViewController, to: UIViewController, completion:(() -> Void)? = nil) {
         if let nav = from.navigationController {
             nav.pushViewController(to, animated: true)
@@ -51,6 +90,9 @@ final class Router {
         } else {
             from.present(to, animated: true, completion: completion)
         }
+    }
+    private func showPresent(from: UIViewController,to: UIViewController) {
+        from.present(to , animated: true)
     }
 }
 

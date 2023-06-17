@@ -31,16 +31,26 @@ final class ArticleViewController: UIViewController {
     private let navigationTitle = "WikiSurprise"
     private let backButtonTitle = "Back"
     private let getArticleErrorMessage = "記事の取得に失敗しました｡"
+    private let rightBarButtonTitle = "info"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.isHidden = true
         indicator.isHidden = true
+
         navigationItem.hidesBackButton = true
         navigationItem.title = navigationTitle
         navigationItem.backButtonTitle = backButtonTitle
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title:rightBarButtonTitle, style: .done, target: self, action: #selector(tappedInfo))
+
         NetworkMonitor.shared.startMonitoring()
         NotificationCenter.default.addObserver(self, selector: #selector(connectionLost), name: NetworkMonitor.connectionLost, object: nil)
+
+    }
+
+    @objc func tappedInfo() {
+        Router.shared.showInfo(from: self)
 
     }
 
