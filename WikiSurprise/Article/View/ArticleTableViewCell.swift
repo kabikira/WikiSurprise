@@ -17,7 +17,7 @@ final class ArticleTableViewCell: UITableViewCell {
         super.prepareForReuse()
         titleLabel.text = nil
     }
-    func configure(article: Article) {
+   func configure(article: Article) {
            self.titleLabel.text = article.title
        }
 }
