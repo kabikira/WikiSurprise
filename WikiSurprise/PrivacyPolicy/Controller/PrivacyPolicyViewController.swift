@@ -19,6 +19,20 @@ final class PrivacyPolicyViewController: UIViewController {
     @IBOutlet private weak var indicator: UIActivityIndicatorView!
     @IBOutlet private weak var connectionErrorView: UIView!
 
+    @IBOutlet private weak var closeButton: UIButton! {
+        didSet {
+                    if isBeingPresented {
+                        closeButton.isHidden = false
+                    } else {
+                        closeButton.isHidden = true
+                    }
+                }
+    }
+    @IBAction func closeModalButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.navigationDelegate = self
