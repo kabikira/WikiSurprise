@@ -17,17 +17,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s07-Ax-dbs">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="aQT-65-D0O">
-                                <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
-                            </activityIndicatorView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kmf-QM-lnP">
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ZWM-zx-DOa">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="30"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KET-vB-Hga">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2o-D8-WMk">
+                                                        <rect key="frame" x="0.0" y="0.0" width="393" height="30"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="閉じる"/>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="e2o-D8-WMk" firstAttribute="leading" secondItem="KET-vB-Hga" secondAttribute="leading" id="HX7-hu-NPT"/>
+                                                    <constraint firstItem="e2o-D8-WMk" firstAttribute="top" secondItem="KET-vB-Hga" secondAttribute="top" id="ID9-qZ-tLV"/>
+                                                    <constraint firstAttribute="trailing" secondItem="e2o-D8-WMk" secondAttribute="trailing" id="bEM-uh-vsy"/>
+                                                    <constraint firstAttribute="bottom" secondItem="e2o-D8-WMk" secondAttribute="bottom" id="fKm-cf-nkH"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="fox-Nt-5S8"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oxi-cr-4te">
+                                        <rect key="frame" x="0.0" y="30" width="393" height="763"/>
+                                        <subviews>
+                                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s07-Ax-dbs">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="763"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <wkWebViewConfiguration key="configuration">
+                                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                                    <wkPreferences key="preferences"/>
+                                                </wkWebViewConfiguration>
+                                            </wkWebView>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="aQT-65-D0O">
+                                                <rect key="frame" x="186.66666666666666" y="371.66666666666669" width="20" height="20"/>
+                                            </activityIndicatorView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="s07-Ax-dbs" secondAttribute="trailing" id="2Bv-3f-lcX"/>
+                                            <constraint firstItem="aQT-65-D0O" firstAttribute="centerY" secondItem="Oxi-cr-4te" secondAttribute="centerY" id="Ds7-sD-kbG"/>
+                                            <constraint firstItem="aQT-65-D0O" firstAttribute="centerX" secondItem="Oxi-cr-4te" secondAttribute="centerX" id="Qmk-pn-leY"/>
+                                            <constraint firstItem="s07-Ax-dbs" firstAttribute="leading" secondItem="Oxi-cr-4te" secondAttribute="leading" id="VsR-nG-ehr"/>
+                                            <constraint firstAttribute="bottom" secondItem="s07-Ax-dbs" secondAttribute="bottom" id="cFm-RG-Uh4"/>
+                                            <constraint firstItem="s07-Ax-dbs" firstAttribute="top" secondItem="Oxi-cr-4te" secondAttribute="top" id="xpQ-WD-s9O"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Thq-Je-Bxb">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
@@ -55,16 +99,14 @@
                         <viewLayoutGuide key="safeArea" id="7hh-cp-3WH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="7hh-cp-3WH" firstAttribute="trailing" secondItem="Thq-Je-Bxb" secondAttribute="trailing" id="9dB-RC-Fgg"/>
-                            <constraint firstItem="Thq-Je-Bxb" firstAttribute="leading" secondItem="7hh-cp-3WH" secondAttribute="leading" id="BAJ-Jt-mgJ"/>
-                            <constraint firstItem="aQT-65-D0O" firstAttribute="centerY" secondItem="40i-5I-52e" secondAttribute="centerY" id="Fa5-Bl-hv6"/>
-                            <constraint firstItem="s07-Ax-dbs" firstAttribute="leading" secondItem="7hh-cp-3WH" secondAttribute="leading" id="PeH-xX-nwD"/>
-                            <constraint firstItem="7hh-cp-3WH" firstAttribute="bottom" secondItem="Thq-Je-Bxb" secondAttribute="bottom" id="WyY-Rq-jYm"/>
-                            <constraint firstItem="s07-Ax-dbs" firstAttribute="top" secondItem="7hh-cp-3WH" secondAttribute="top" id="erb-Xp-IWR"/>
-                            <constraint firstItem="7hh-cp-3WH" firstAttribute="trailing" secondItem="s07-Ax-dbs" secondAttribute="trailing" id="keg-nr-DX0"/>
-                            <constraint firstItem="7hh-cp-3WH" firstAttribute="bottom" secondItem="s07-Ax-dbs" secondAttribute="bottom" id="ntt-Oy-ypm"/>
-                            <constraint firstItem="Thq-Je-Bxb" firstAttribute="top" secondItem="7hh-cp-3WH" secondAttribute="top" id="yg6-z9-dJQ"/>
-                            <constraint firstItem="aQT-65-D0O" firstAttribute="centerX" secondItem="40i-5I-52e" secondAttribute="centerX" id="ziF-0J-fgU"/>
+                            <constraint firstItem="kmf-QM-lnP" firstAttribute="top" secondItem="7hh-cp-3WH" secondAttribute="top" id="9g2-t0-icn"/>
+                            <constraint firstItem="kmf-QM-lnP" firstAttribute="leading" secondItem="7hh-cp-3WH" secondAttribute="leading" id="J5T-FF-nzz"/>
+                            <constraint firstItem="Thq-Je-Bxb" firstAttribute="top" secondItem="7hh-cp-3WH" secondAttribute="top" id="L4c-0e-QmR"/>
+                            <constraint firstItem="Thq-Je-Bxb" firstAttribute="trailing" secondItem="7hh-cp-3WH" secondAttribute="trailing" id="SsG-vR-1os"/>
+                            <constraint firstAttribute="bottom" secondItem="kmf-QM-lnP" secondAttribute="bottom" id="cWV-yl-bRR"/>
+                            <constraint firstItem="Thq-Je-Bxb" firstAttribute="leading" secondItem="7hh-cp-3WH" secondAttribute="leading" id="dGx-Gc-Ake"/>
+                            <constraint firstItem="7hh-cp-3WH" firstAttribute="trailing" secondItem="kmf-QM-lnP" secondAttribute="trailing" id="j9q-4E-ohk"/>
+                            <constraint firstItem="Thq-Je-Bxb" firstAttribute="bottom" secondItem="7hh-cp-3WH" secondAttribute="bottom" id="ndJ-bP-ayg"/>
                         </constraints>
                     </view>
                     <connections>
