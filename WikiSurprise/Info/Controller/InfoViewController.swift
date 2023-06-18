@@ -14,6 +14,14 @@ final class InfoViewController: UIViewController {
             if let image: UIImage = UIImage(named: "icon") {
                 iconImage.image = image
             }
+            // モーションエフェクト実装
+            let xMotion = UIInterpolatingMotionEffect(keyPath: "center.x", type: UIInterpolatingMotionEffect.EffectType.tiltAlongHorizontalAxis)
+            xMotion.minimumRelativeValue = -100.0
+            xMotion.maximumRelativeValue = 100.0
+            let yMotion = UIInterpolatingMotionEffect(keyPath: "center.y", type: UIInterpolatingMotionEffect.EffectType.tiltAlongVerticalAxis)
+            yMotion.minimumRelativeValue = -100.0
+            yMotion.maximumRelativeValue = 100.0
+            iconImage.motionEffects = [xMotion, yMotion]
         }
     }
     @IBOutlet private weak var tableView: UITableView! {
