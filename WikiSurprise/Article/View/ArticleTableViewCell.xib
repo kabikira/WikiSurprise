@@ -15,10 +15,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mMK-Jd-PJx">
-                    <rect key="frame" x="8" y="8" width="377" height="134"/>
+                    <rect key="frame" x="20" y="8" width="365" height="134"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RD4-0D-5qJ">
-                            <rect key="frame" x="0.0" y="0.0" width="377" height="134"/>
+                            <rect key="frame" x="0.0" y="0.0" width="365" height="134"/>
                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -31,7 +31,7 @@
                 <constraint firstAttribute="trailing" secondItem="mMK-Jd-PJx" secondAttribute="trailing" constant="8" id="0SG-cW-dRb"/>
                 <constraint firstItem="mMK-Jd-PJx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Urd-QX-jpI"/>
                 <constraint firstAttribute="bottom" secondItem="mMK-Jd-PJx" secondAttribute="bottom" priority="750" constant="8" id="gt0-BD-5jC"/>
-                <constraint firstItem="mMK-Jd-PJx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="qNt-Iq-BsV"/>
+                <constraint firstItem="mMK-Jd-PJx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="qNt-Iq-BsV"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

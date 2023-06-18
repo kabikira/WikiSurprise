@@ -13,6 +13,7 @@ final class ArticleTableViewCell: UITableViewCell {
     // ハードコーティングを防ぐため
     static var className: String { String(describing: ArticleTableViewCell.self)}
 
+
     override func prepareForReuse() {
         super.prepareForReuse()
         titleLabel.text = nil
