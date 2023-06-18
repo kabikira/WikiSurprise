@@ -20,6 +20,7 @@ final class WebViewController: UIViewController {
 
     private var wikiArticle: Article?
 
+    //　タップしたセルからWebViewで表示するURLを受け取るのに使用
     func configure(wikiArticle: Article) {
         self.wikiArticle = wikiArticle
     }
