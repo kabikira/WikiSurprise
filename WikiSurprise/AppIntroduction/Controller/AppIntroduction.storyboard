@@ -143,7 +143,7 @@
                     <connections>
                         <outlet property="closeButton" destination="Qaz-Eh-ySF" id="wUS-5q-kp9"/>
                         <outlet property="doneButton" destination="DeR-Az-h9o" id="eNd-CE-tzx"/>
-                        <outlet property="intorductionImage" destination="5c1-tr-iv5" id="8JG-Xd-yE9"/>
+                        <outlet property="introductionImage" destination="5c1-tr-iv5" id="IXd-bv-tvM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
