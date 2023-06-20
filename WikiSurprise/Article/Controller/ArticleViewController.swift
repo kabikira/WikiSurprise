@@ -15,23 +15,26 @@ final class ArticleViewController: UIViewController {
     private let backButtonTitle = "Back"
     private let getArticleErrorMessage = "記事の取得に失敗しました｡"
     private let rightBarButtonTitle = "info"
+    private let iconImageName = "icon"
+    private let motionEffectRange: CGFloat = 200.0
+
 
     @IBOutlet weak var motionImageView: UIImageView! {
         didSet {
 
-            if let image: UIImage = UIImage(named: "icon") {
+            if let image: UIImage = UIImage(named: iconImageName) {
                 motionImageView.image = image
             }
             // 水平方向
             let xMotion = UIInterpolatingMotionEffect(keyPath: "center.x", type: UIInterpolatingMotionEffect.EffectType.tiltAlongHorizontalAxis)
             // 左右の動きの幅
-            xMotion.minimumRelativeValue = -200.0
-            xMotion.maximumRelativeValue = 200.0
+            xMotion.minimumRelativeValue = -motionEffectRange
+            xMotion.maximumRelativeValue = motionEffectRange
             // 垂直方向
             let yMotion = UIInterpolatingMotionEffect(keyPath: "center.y", type: UIInterpolatingMotionEffect.EffectType.tiltAlongVerticalAxis)
             // 上下の動きの幅
-            yMotion.minimumRelativeValue = -200.0
-            yMotion.maximumRelativeValue = 200.0
+            yMotion.minimumRelativeValue = -motionEffectRange
+            yMotion.maximumRelativeValue = motionEffectRange
             // モーションエフェクトの指定
             motionImageView.motionEffects = [xMotion, yMotion]
         }
@@ -75,10 +78,19 @@ final class ArticleViewController: UIViewController {
         }
     }
     @objc func tapFetchArticleButton(_sender: UIButton) {
+        hideIndicator()
+        fetchArticles()
+
+    }
+
+    private func hideIndicator() {
         indicator.isHidden = false
         indicator.startAnimating()
         tableView.isHidden = true
         fetchArticleButton.isEnabled = false
+    }
+
+    private func fetchArticles() {
         // APIクライアントの生成
         let client = WikiClient(httpClient: URLSession.shared)
         // リクエストの発行
@@ -86,7 +98,6 @@ final class ArticleViewController: UIViewController {
         // リクエストの送信
         Task {
             do {
-
                 articles = try await client.send(request: request).query.random ?? []
                 print(articles)
                 await MainActor.run {
@@ -102,14 +113,12 @@ final class ArticleViewController: UIViewController {
                 showAlert(message: getArticleErrorMessage)
             }
         }
-
     }
     private func showAlert(message: String) {
         let alert = UIAlertController(title: "エラー", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-
 }
 
 extension ArticleViewController: UITableViewDelegate {
