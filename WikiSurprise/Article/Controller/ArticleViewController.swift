@@ -78,10 +78,19 @@ final class ArticleViewController: UIViewController {
         }
     }
     @objc func tapFetchArticleButton(_sender: UIButton) {
+        hideIndicator()
+        fetchArticles()
+
+    }
+
+    private func hideIndicator() {
         indicator.isHidden = false
         indicator.startAnimating()
         tableView.isHidden = true
         fetchArticleButton.isEnabled = false
+    }
+
+    private func fetchArticles() {
         // APIクライアントの生成
         let client = WikiClient(httpClient: URLSession.shared)
         // リクエストの発行
