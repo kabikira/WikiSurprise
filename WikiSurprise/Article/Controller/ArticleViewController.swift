@@ -18,6 +18,7 @@ final class ArticleViewController: UIViewController {
 
     @IBOutlet weak var motionImageView: UIImageView! {
         didSet {
+
             if let image: UIImage = UIImage(named: "icon") {
                 motionImageView.image = image
             }
@@ -83,25 +84,23 @@ final class ArticleViewController: UIViewController {
         // リクエストの発行
         let request = WikiAPI.GetArticles()
         // リクエストの送信
-        client.send(request: request) { result in
-            DispatchQueue.main.async {
-                self.indicator.isHidden = true
-                self.indicator.stopAnimating()
-                self.tableView.isHidden = false
-                self.motionImageView.isHidden = true
-                self.fetchArticleButton.isEnabled = true
-                switch result {
-                case .success(let response):
-                    print(response)
-                    self.articles = response.query.random ?? []
-                    print(self.articles)
-                    self.tableView.reloadData()
-                case .failure(let error):
-                    print(error)
-                    self.showAlert(message: self.getArticleErrorMessage)
-                }
-            }
+        Task {
+            do {
 
+                articles = try await client.send(request: request).query.random ?? []
+                print(articles)
+                await MainActor.run {
+                    indicator.isHidden = true
+                    indicator.stopAnimating()
+                    tableView.isHidden = false
+                    motionImageView.isHidden = true
+                    fetchArticleButton.isEnabled = true
+                    tableView.reloadData()
+                }
+            } catch(let error) {
+                print(error)
+                showAlert(message: getArticleErrorMessage)
+            }
         }
 
     }
