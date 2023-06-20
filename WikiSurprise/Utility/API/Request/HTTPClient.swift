@@ -8,23 +8,15 @@
 import Foundation
 
 protocol HTTPClient {
-    func sendRequest(_ urlRequest: URLRequest, completion: @escaping (Result<(Data, HTTPURLResponse), Error>) -> Void)
+    func sendRequest(_ urlRequest: URLRequest) async throws -> (Data, HTTPURLResponse)
 }
 
 extension URLSession: HTTPClient {
-    func sendRequest(_ urlRequest: URLRequest, completion: @escaping (Result<(Data, HTTPURLResponse), Error>) -> Void) {
-        let task = dataTask(with: urlRequest) { data, urlResponse, error in
-            switch (data, urlResponse, error) {
-            case (_, _, let error?):
-                completion(Result.failure(error))
-            case (let data?, let urlResponse as HTTPURLResponse, _):
-                completion(Result.success((data, urlResponse)))
-            default:
-                fatalError("invalid response combination \(String(describing: (data, urlRequest, error))).")
-            }
+    func sendRequest(_ urlRequest: URLRequest) async throws -> (Data, HTTPURLResponse) {
+        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+        guard let httpURLResponse = response as? HTTPURLResponse else {
+            throw URLError(.badServerResponse)
         }
-        task.resume()
-
+        return (data, httpURLResponse)
     }
 }
-
