@@ -15,7 +15,7 @@ final class Router {
 
     func showRoot(window: UIWindow) {
         if !UserDefaults.standard.isLogined {
-            guard let vc = UIStoryboard.init(name: "AppIntroduction", bundle: nil).instantiateInitialViewController() else {
+            guard let vc = AppIntroductionViewController.makeFromStoryboard() else {
                 return
             }
             let nav = UINavigationController(rootViewController: vc)

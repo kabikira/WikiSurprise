@@ -11,6 +11,12 @@ final class AppIntroductionViewController: UIViewController {
 
     private let introductionImageName = "WikiSurprise"
 
+    static let storyboardName = "AppIntroduction"
+
+    static func makeFromStoryboard() -> AppIntroductionViewController? {
+        return UIStoryboard(name: storyboardName, bundle: nil).instantiateInitialViewController() as? AppIntroductionViewController
+    }
+
 @IBOutlet weak var introductionImage: UIImageView! {
         didSet {
             if let image: UIImage = UIImage(named: introductionImageName) {
