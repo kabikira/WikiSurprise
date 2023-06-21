@@ -21,9 +21,7 @@ final class NetworkMonitor {
     func startMonitoring() {
         monitor.pathUpdateHandler = { path in
             if path.status == .satisfied {
-                print("We're connected!")
             } else {
-                print("No connection.")
                 NotificationCenter.default.post(name: NetworkMonitor.connectionLost, object: nil)
             }
         }
