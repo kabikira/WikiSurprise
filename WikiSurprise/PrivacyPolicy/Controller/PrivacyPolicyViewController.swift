@@ -11,6 +11,12 @@ import WebKit
 final class PrivacyPolicyViewController: UIViewController {
 
     private let privacyPolicyURL = "https://kabikira.github.io/imael.github.io/privacy/privacy.html"
+
+    static let storyboardName = "PrivacyPolicy"
+
+    static func makeFromStoryboard() -> PrivacyPolicyViewController? {
+        return UIStoryboard(name: storyboardName, bundle: nil).instantiateInitialViewController() as? PrivacyPolicyViewController
+    }
     @IBOutlet private weak var webView: WKWebView! {
         didSet {
             webView.navigationDelegate = self

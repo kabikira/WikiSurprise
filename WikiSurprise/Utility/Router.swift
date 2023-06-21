@@ -72,7 +72,7 @@ final class Router {
 
         case infoItems[2].title:
             print("プライバシー")
-            guard let privacyPolicy = UIStoryboard.init(name: "PrivacyPolicy", bundle: nil).instantiateInitialViewController() else {
+            guard let privacyPolicy = PrivacyPolicyViewController.makeFromStoryboard() else {
                 return
             }
             showPresent(from: from, to: privacyPolicy)
