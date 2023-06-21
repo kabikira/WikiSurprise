@@ -22,7 +22,7 @@ final class Router {
             window.rootViewController = nav
 
         } else {
-            guard let vc = UIStoryboard.init(name: "Article", bundle: nil).instantiateInitialViewController() else {
+            guard let vc = ArticleViewController.makeFromStoryboard() else {
                 return
             }
             let nav = UINavigationController(rootViewController: vc)

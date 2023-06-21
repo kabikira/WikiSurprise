@@ -18,6 +18,13 @@ final class ArticleViewController: UIViewController {
     private let iconImageName = "icon"
     private let motionEffectRange: CGFloat = 200.0
 
+    static let storyboardName = "Article"
+
+    static func makeFromStoryboard() -> ArticleViewController? {
+        return UIStoryboard(name: storyboardName, bundle: nil).instantiateInitialViewController() as? ArticleViewController
+    }
+
+
 
     @IBOutlet weak var motionImageView: UIImageView! {
         didSet {
