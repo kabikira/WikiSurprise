@@ -8,7 +8,14 @@
 import UIKit
 import WebKit
 
+
 final class WebViewController: UIViewController {
+
+    static let storyboardName = "Web"
+
+    static func makeFromStoryboard() -> WebViewController? {
+        return UIStoryboard(name: storyboardName, bundle: nil).instantiateInitialViewController() as? WebViewController
+    }
 
     @IBOutlet private weak var webView: WKWebView! {
         didSet {
@@ -38,20 +45,18 @@ final class WebViewController: UIViewController {
             showError(WebViewError.connectionError.description)
             return
         }
-        DispatchQueue.global(qos: .userInitiated).async {
-            let request = URLRequest(url: url)
-            DispatchQueue.main.async {
-                self.webView.load(request)
-                self.webView.isHidden = false
-            }
+        let request = URLRequest(url: url)
+        Task { @MainActor in
+            self.webView.load(request)
+            self.webView.isHidden = false
         }
     }
 
     private func showError(_ message: String) {
-            let alert = UIAlertController(title: "エラー", message: message, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
+        let alert = UIAlertController(title: "エラー", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     @objc func refreshWebView() {
         webView.reload()
     }

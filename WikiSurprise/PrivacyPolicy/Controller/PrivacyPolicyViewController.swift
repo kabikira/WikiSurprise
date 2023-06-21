@@ -11,6 +11,12 @@ import WebKit
 final class PrivacyPolicyViewController: UIViewController {
 
     private let privacyPolicyURL = "https://kabikira.github.io/imael.github.io/privacy/privacy.html"
+
+    static let storyboardName = "PrivacyPolicy"
+
+    static func makeFromStoryboard() -> PrivacyPolicyViewController? {
+        return UIStoryboard(name: storyboardName, bundle: nil).instantiateInitialViewController() as? PrivacyPolicyViewController
+    }
     @IBOutlet private weak var webView: WKWebView! {
         didSet {
             webView.navigationDelegate = self
@@ -46,12 +52,10 @@ final class PrivacyPolicyViewController: UIViewController {
             showError(WebViewError.connectionError.description)
             return
         }
-        DispatchQueue.global(qos: .userInitiated).async {
-            let request = URLRequest(url: url)
-            DispatchQueue.main.async {
-                self.webView.load(request)
-                self.webView.isHidden = false
-            }
+        let request = URLRequest(url: url)
+        Task { @MainActor in
+            self.webView.load(request)
+            self.webView.isHidden = false
         }
     }
     private func showError(_ message: String) {

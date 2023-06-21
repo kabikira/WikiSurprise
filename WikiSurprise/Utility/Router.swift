@@ -8,6 +8,8 @@
 import UIKit
 
 final class Router {
+
+    private let googleFormsURL = "https://docs.google.com/forms/d/e/1FAIpQLSfpFrJaXEElgvXTiovIgSMzstFfu5rATe4pc4L8lIe12MiXWw/viewform"
     static let shared = Router()
     private init() {}
 
@@ -15,14 +17,14 @@ final class Router {
 
     func showRoot(window: UIWindow) {
         if !UserDefaults.standard.isLogined {
-            guard let vc = UIStoryboard.init(name: "AppIntroduction", bundle: nil).instantiateInitialViewController() else {
+            guard let vc = AppIntroductionViewController.makeFromStoryboard() else {
                 return
             }
             let nav = UINavigationController(rootViewController: vc)
             window.rootViewController = nav
 
         } else {
-            guard let vc = UIStoryboard.init(name: "Article", bundle: nil).instantiateInitialViewController() else {
+            guard let vc = ArticleViewController.makeFromStoryboard() else {
                 return
             }
             let nav = UINavigationController(rootViewController: vc)
@@ -32,13 +34,13 @@ final class Router {
         self.window = window
     }
     func showArticle(from: UIViewController) {
-        guard let Article = UIStoryboard.init(name: "Article", bundle: nil).instantiateInitialViewController() else {
+        guard let Article = ArticleViewController.makeFromStoryboard() else {
             return
         }
         show(from: from, to: Article)
     }
     func showWeb(from: UIViewController, articleModel: Article) {
-        guard let web = UIStoryboard.init(name: "Web", bundle: nil).instantiateInitialViewController() as? WebViewController else {
+        guard let web = WebViewController.makeFromStoryboard() else {
             return
         }
         web.configure(wikiArticle: articleModel)
@@ -46,7 +48,7 @@ final class Router {
     }
 
     func showInfo(from: UIViewController) {
-        guard let info = UIStoryboard.init(name: "Info", bundle: nil).instantiateInitialViewController() as? InfoViewController else {
+        guard let info = InfoViewController.makeFromStoryboard() else {
             return
         }
         show(from: from, to: info)
@@ -56,28 +58,23 @@ final class Router {
         // TODO 画面遷移の分岐
         switch infoItem.title {
         case infoItems[0].title:
-            print("説明")
-            guard let appintorduction = UIStoryboard.init(name: "AppIntroduction", bundle: nil).instantiateInitialViewController() else {
+            guard let appintorduction = AppIntroductionViewController.makeFromStoryboard() else {
                 return
             }
             showPresent(from: from, to: appintorduction)
         case infoItems[1].title:
-            print("お問い合わせ")
             // サファリを開いて表示、WebViewで表示するかどちらがいいのかわからない
-            if let url = URL(string: "https://docs.google.com/forms/d/e/1FAIpQLSfpFrJaXEElgvXTiovIgSMzstFfu5rATe4pc4L8lIe12MiXWw/viewform") {
+            if let url = URL(string: googleFormsURL) {
                 if UIApplication.shared.canOpenURL(url) {
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 }
             }
 
         case infoItems[2].title:
-            print("プライバシー")
-            guard let privacyPolicy = UIStoryboard.init(name: "PrivacyPolicy", bundle: nil).instantiateInitialViewController() else {
+            guard let privacyPolicy = PrivacyPolicyViewController.makeFromStoryboard() else {
                 return
             }
             showPresent(from: from, to: privacyPolicy)
-        case infoItems[3].title:
-            print("Ver")
         default:
             break
         }

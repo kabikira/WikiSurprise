@@ -9,18 +9,26 @@ import UIKit
 
 final class InfoViewController: UIViewController {
 
+    private let iconImageName = "icon"
+    private let motionEffectRange: CGFloat = 100.0
+    static let storyboardName = "Info"
+
+    static func makeFromStoryboard() -> InfoViewController? {
+        return UIStoryboard(name: storyboardName, bundle: nil).instantiateInitialViewController() as? InfoViewController
+    }
+
     @IBOutlet private weak var iconImage: UIImageView! {
         didSet {
-            if let image: UIImage = UIImage(named: "icon") {
+            if let image: UIImage = UIImage(named: iconImageName) {
                 iconImage.image = image
             }
             // モーションエフェクト実装
             let xMotion = UIInterpolatingMotionEffect(keyPath: "center.x", type: UIInterpolatingMotionEffect.EffectType.tiltAlongHorizontalAxis)
-            xMotion.minimumRelativeValue = -100.0
-            xMotion.maximumRelativeValue = 100.0
+            xMotion.minimumRelativeValue = -motionEffectRange
+            xMotion.maximumRelativeValue = motionEffectRange
             let yMotion = UIInterpolatingMotionEffect(keyPath: "center.y", type: UIInterpolatingMotionEffect.EffectType.tiltAlongVerticalAxis)
-            yMotion.minimumRelativeValue = -100.0
-            yMotion.maximumRelativeValue = 100.0
+            yMotion.minimumRelativeValue = motionEffectRange
+            yMotion.maximumRelativeValue = motionEffectRange
             iconImage.motionEffects = [xMotion, yMotion]
         }
     }
