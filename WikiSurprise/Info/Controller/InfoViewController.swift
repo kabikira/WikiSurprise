@@ -11,6 +11,11 @@ final class InfoViewController: UIViewController {
 
     private let iconImageName = "icon"
     private let motionEffectRange: CGFloat = 100.0
+    static let storyboardName = "Info"
+
+    static func makeFromStoryboard() -> InfoViewController? {
+        return UIStoryboard(name: storyboardName, bundle: nil).instantiateInitialViewController() as? InfoViewController
+    }
 
     @IBOutlet private weak var iconImage: UIImageView! {
         didSet {

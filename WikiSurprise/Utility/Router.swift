@@ -46,7 +46,7 @@ final class Router {
     }
 
     func showInfo(from: UIViewController) {
-        guard let info = UIStoryboard.init(name: "Info", bundle: nil).instantiateInitialViewController() as? InfoViewController else {
+        guard let info = InfoViewController.makeFromStoryboard() else {
             return
         }
         show(from: from, to: info)
