@@ -8,6 +8,8 @@
 import UIKit
 
 final class Router {
+
+    private let googleFormsURL = "https://docs.google.com/forms/d/e/1FAIpQLSfpFrJaXEElgvXTiovIgSMzstFfu5rATe4pc4L8lIe12MiXWw/viewform"
     static let shared = Router()
     private init() {}
 
@@ -56,28 +58,23 @@ final class Router {
         // TODO 画面遷移の分岐
         switch infoItem.title {
         case infoItems[0].title:
-            print("説明")
-            guard let appintorduction = UIStoryboard.init(name: "AppIntroduction", bundle: nil).instantiateInitialViewController() else {
+            guard let appintorduction = AppIntroductionViewController.makeFromStoryboard() else {
                 return
             }
             showPresent(from: from, to: appintorduction)
         case infoItems[1].title:
-            print("お問い合わせ")
             // サファリを開いて表示、WebViewで表示するかどちらがいいのかわからない
-            if let url = URL(string: "https://docs.google.com/forms/d/e/1FAIpQLSfpFrJaXEElgvXTiovIgSMzstFfu5rATe4pc4L8lIe12MiXWw/viewform") {
+            if let url = URL(string: googleFormsURL) {
                 if UIApplication.shared.canOpenURL(url) {
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 }
             }
 
         case infoItems[2].title:
-            print("プライバシー")
             guard let privacyPolicy = PrivacyPolicyViewController.makeFromStoryboard() else {
                 return
             }
             showPresent(from: from, to: privacyPolicy)
-        case infoItems[3].title:
-            print("Ver")
         default:
             break
         }
