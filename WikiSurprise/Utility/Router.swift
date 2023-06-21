@@ -32,7 +32,7 @@ final class Router {
         self.window = window
     }
     func showArticle(from: UIViewController) {
-        guard let Article = UIStoryboard.init(name: "Article", bundle: nil).instantiateInitialViewController() else {
+        guard let Article = ArticleViewController.makeFromStoryboard() else {
             return
         }
         show(from: from, to: Article)
