@@ -11,6 +11,12 @@ import WebKit
 
 final class WebViewController: UIViewController {
 
+    static let storyboardName = "Web"
+
+    static func makeFromStoryboard() -> WebViewController? {
+        return UIStoryboard(name: storyboardName, bundle: nil).instantiateInitialViewController() as? WebViewController
+    }
+
     @IBOutlet private weak var webView: WKWebView! {
         didSet {
             webView.navigationDelegate = self
