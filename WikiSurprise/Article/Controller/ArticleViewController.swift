@@ -120,6 +120,7 @@ final class ArticleViewController: UIViewController {
                 showAlert(message: getArticleErrorMessage)
             }
         }
+         print("afrer task")
     }
     private func showAlert(message: String) {
         let alert = UIAlertController(title: "エラー", message: message, preferredStyle: .alert)

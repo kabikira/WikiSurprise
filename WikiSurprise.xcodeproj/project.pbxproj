@@ -13,6 +13,7 @@
 		3B26E1342A34564D00A18EEE /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B26E1332A34564D00A18EEE /* HTTPMethod.swift */; };
 		3B26E1362A34D45600A18EEE /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B26E1352A34D45600A18EEE /* HTTPClient.swift */; };
 		3B26E1382A355B5000A18EEE /* WikiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B26E1372A355B5000A18EEE /* WikiClient.swift */; };
+		3B55B4452A43C1F4009ADB11 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B55B4442A43C1F4009ADB11 /* UIViewController+.swift */; };
 		3B6958CE2A2AE56000EC3CE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6958CD2A2AE56000EC3CE0 /* AppDelegate.swift */; };
 		3B6958D02A2AE56000EC3CE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6958CF2A2AE56000EC3CE0 /* SceneDelegate.swift */; };
 		3B6958D72A2AE56100EC3CE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B6958D62A2AE56100EC3CE0 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		3B26E1332A34564D00A18EEE /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		3B26E1352A34D45600A18EEE /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		3B26E1372A355B5000A18EEE /* WikiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiClient.swift; sourceTree = "<group>"; };
+		3B55B4442A43C1F4009ADB11 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		3B6958CA2A2AE56000EC3CE0 /* WikiSurprise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WikiSurprise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B6958CD2A2AE56000EC3CE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B6958CF2A2AE56000EC3CE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			children = (
 				3B26E12A2A33628400A18EEE /* API */,
 				3B783C822A36168300E20F8E /* WebViewError.swift */,
+				3B55B4442A43C1F4009ADB11 /* UIViewController+.swift */,
 				3B783C842A372E3700E20F8E /* NetworkMonitor.swift */,
 				3B6958E72A2C61AD00EC3CE0 /* Router.swift */,
 				3B6958F82A2C647800EC3CE0 /* UserDefaults+.swift */,
@@ -369,6 +372,7 @@
 				3B6958E82A2C61AD00EC3CE0 /* Router.swift in Sources */,
 				3B26E1362A34D45600A18EEE /* HTTPClient.swift in Sources */,
 				3B6958E62A2C619F00EC3CE0 /* WikiAPI.swift in Sources */,
+				3B55B4452A43C1F4009ADB11 /* UIViewController+.swift in Sources */,
 				3B26E12C2A3362C400A18EEE /* WikiClientError.swift in Sources */,
 				3B6958D02A2AE56000EC3CE0 /* SceneDelegate.swift in Sources */,
 				3B783C8B2A38BF9400E20F8E /* AppIntroductionViewController.swift in Sources */,
