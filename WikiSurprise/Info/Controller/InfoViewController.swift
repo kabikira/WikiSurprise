@@ -27,7 +27,7 @@ final class InfoViewController: UIViewController {
             xMotion.minimumRelativeValue = -motionEffectRange
             xMotion.maximumRelativeValue = motionEffectRange
             let yMotion = UIInterpolatingMotionEffect(keyPath: "center.y", type: UIInterpolatingMotionEffect.EffectType.tiltAlongVerticalAxis)
-            yMotion.minimumRelativeValue = motionEffectRange
+            yMotion.minimumRelativeValue = -motionEffectRange
             yMotion.maximumRelativeValue = motionEffectRange
             iconImage.motionEffects = [xMotion, yMotion]
         }
