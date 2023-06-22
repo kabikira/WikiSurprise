@@ -27,4 +27,11 @@ extension UIViewController {
         yMotion.maximumRelativeValue = effectRange
         targetView.motionEffects = [xMotion, yMotion]
     }
+
+    func setUpNavigationBar(title: String, backButtonTitle: String, rightButtonTitle: String, rightBarButtonAction: Selector) {
+        navigationItem.hidesBackButton = true
+        navigationItem.title = title
+        navigationItem.backButtonTitle = backButtonTitle
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: rightButtonTitle, style: .done, target: self, action: rightBarButtonAction)
+    }
 }

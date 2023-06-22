@@ -56,11 +56,14 @@ final class ArticleViewController: UIViewController {
         tableView.isHidden = true
         indicator.isHidden = true
 
-        navigationItem.hidesBackButton = true
-        navigationItem.title = navigationTitle
-        navigationItem.backButtonTitle = backButtonTitle
+//        navigationItem.hidesBackButton = true
+//        navigationItem.title = navigationTitle
+//        navigationItem.backButtonTitle = backButtonTitle
+//
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(title:rightBarButtonTitle, style: .done, target: self, action: #selector(tappedInfo))
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title:rightBarButtonTitle, style: .done, target: self, action: #selector(tappedInfo))
+        setUpNavigationBar(title: navigationTitle, backButtonTitle: backButtonTitle, rightButtonTitle: rightBarButtonTitle, rightBarButtonAction: #selector(tappedInfo))
+
 
         NetworkMonitor.shared.startMonitoring()
         NotificationCenter.default.addObserver(self, selector: #selector(connectionLost), name: NetworkMonitor.connectionLost, object: nil)
