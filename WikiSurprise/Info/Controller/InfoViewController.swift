@@ -23,13 +23,7 @@ final class InfoViewController: UIViewController {
                 iconImage.image = image
             }
             // モーションエフェクト実装
-            let xMotion = UIInterpolatingMotionEffect(keyPath: "center.x", type: UIInterpolatingMotionEffect.EffectType.tiltAlongHorizontalAxis)
-            xMotion.minimumRelativeValue = -motionEffectRange
-            xMotion.maximumRelativeValue = motionEffectRange
-            let yMotion = UIInterpolatingMotionEffect(keyPath: "center.y", type: UIInterpolatingMotionEffect.EffectType.tiltAlongVerticalAxis)
-            yMotion.minimumRelativeValue = -motionEffectRange
-            yMotion.maximumRelativeValue = motionEffectRange
-            iconImage.motionEffects = [xMotion, yMotion]
+            motionEffect(effectRange: motionEffectRange, targetView: iconImage)
         }
     }
     @IBOutlet private weak var tableView: UITableView! {

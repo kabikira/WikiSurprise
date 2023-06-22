@@ -32,18 +32,7 @@ final class ArticleViewController: UIViewController {
             if let image: UIImage = UIImage(named: iconImageName) {
                 motionImageView.image = image
             }
-            // 水平方向
-            let xMotion = UIInterpolatingMotionEffect(keyPath: "center.x", type: UIInterpolatingMotionEffect.EffectType.tiltAlongHorizontalAxis)
-            // 左右の動きの幅
-            xMotion.minimumRelativeValue = -motionEffectRange
-            xMotion.maximumRelativeValue = motionEffectRange
-            // 垂直方向
-            let yMotion = UIInterpolatingMotionEffect(keyPath: "center.y", type: UIInterpolatingMotionEffect.EffectType.tiltAlongVerticalAxis)
-            // 上下の動きの幅
-            yMotion.minimumRelativeValue = -motionEffectRange
-            yMotion.maximumRelativeValue = motionEffectRange
-            // モーションエフェクトの指定
-            motionImageView.motionEffects = [xMotion, yMotion]
+           motionEffect(effectRange: motionEffectRange, targetView: motionImageView)
         }
     }
 

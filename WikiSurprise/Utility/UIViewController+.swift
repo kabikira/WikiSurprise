@@ -17,4 +17,14 @@ extension UIViewController {
             }
         }
     }
+
+    func motionEffect(effectRange: CGFloat, targetView: UIView) {
+        let xMotion = UIInterpolatingMotionEffect(keyPath: "center.x", type: UIInterpolatingMotionEffect.EffectType.tiltAlongHorizontalAxis)
+        xMotion.minimumRelativeValue = -effectRange
+        xMotion.maximumRelativeValue = effectRange
+        let yMotion = UIInterpolatingMotionEffect(keyPath: "center.y", type: UIInterpolatingMotionEffect.EffectType.tiltAlongVerticalAxis)
+        yMotion.minimumRelativeValue = -effectRange
+        yMotion.maximumRelativeValue = effectRange
+        targetView.motionEffects = [xMotion, yMotion]
+    }
 }
