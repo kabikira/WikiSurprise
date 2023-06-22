@@ -27,7 +27,7 @@ extension UIViewController {
         yMotion.maximumRelativeValue = effectRange
         targetView.motionEffects = [xMotion, yMotion]
     }
-
+    // ArticleViewControllerのみで使用
     func setUpNavigationBar(title: String, backButtonTitle: String, rightButtonTitle: String, rightBarButtonAction: Selector) {
         navigationItem.hidesBackButton = true
         navigationItem.title = title
