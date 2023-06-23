@@ -8,12 +8,14 @@
 import UIKit
 import WebKit
 
+
 final class ArticleViewController: UIViewController {
 
     private var articles: [Article] = []
     private let navigationTitle = "WikiSurprise"
     private let backButtonTitle = "Back"
     private let getArticleErrorMessage = "記事の取得に失敗しました｡"
+    private let alertTitle = "エラー"
     private let rightBarButtonTitle = "info"
     private let iconImageName = "icon"
     private let motionEffectRange: CGFloat = 200.0
@@ -24,26 +26,13 @@ final class ArticleViewController: UIViewController {
         return UIStoryboard(name: storyboardName, bundle: nil).instantiateInitialViewController() as? ArticleViewController
     }
 
-
-
     @IBOutlet weak var motionImageView: UIImageView! {
         didSet {
 
             if let image: UIImage = UIImage(named: iconImageName) {
                 motionImageView.image = image
             }
-            // 水平方向
-            let xMotion = UIInterpolatingMotionEffect(keyPath: "center.x", type: UIInterpolatingMotionEffect.EffectType.tiltAlongHorizontalAxis)
-            // 左右の動きの幅
-            xMotion.minimumRelativeValue = -motionEffectRange
-            xMotion.maximumRelativeValue = motionEffectRange
-            // 垂直方向
-            let yMotion = UIInterpolatingMotionEffect(keyPath: "center.y", type: UIInterpolatingMotionEffect.EffectType.tiltAlongVerticalAxis)
-            // 上下の動きの幅
-            yMotion.minimumRelativeValue = -motionEffectRange
-            yMotion.maximumRelativeValue = motionEffectRange
-            // モーションエフェクトの指定
-            motionImageView.motionEffects = [xMotion, yMotion]
+           motionEffect(effectRange: motionEffectRange, targetView: motionImageView)
         }
     }
 
@@ -66,12 +55,7 @@ final class ArticleViewController: UIViewController {
         super.viewDidLoad()
         tableView.isHidden = true
         indicator.isHidden = true
-
-        navigationItem.hidesBackButton = true
-        navigationItem.title = navigationTitle
-        navigationItem.backButtonTitle = backButtonTitle
-
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title:rightBarButtonTitle, style: .done, target: self, action: #selector(tappedInfo))
+        setUpNavigationBar(title: navigationTitle, backButtonTitle: backButtonTitle, rightButtonTitle: rightBarButtonTitle, rightBarButtonAction: #selector(tappedInfo))
 
         NetworkMonitor.shared.startMonitoring()
         NotificationCenter.default.addObserver(self, selector: #selector(connectionLost), name: NetworkMonitor.connectionLost, object: nil)
@@ -80,9 +64,8 @@ final class ArticleViewController: UIViewController {
         Router.shared.showInfo(from: self)
     }
     @objc func connectionLost() {
-        DispatchQueue.main.async {
-            self.showAlert(message: NetworkMonitor.connectionLost.rawValue)
-        }
+            showAlert(title: alertTitle, message: NetworkMonitor.connectionLost.rawValue)
+
     }
     @objc func tapFetchArticleButton(_sender: UIButton) {
         hideIndicator()
@@ -97,7 +80,7 @@ final class ArticleViewController: UIViewController {
         fetchArticleButton.isEnabled = false
     }
 
-    private func fetchArticles() {
+    private func fetchArticles()  {
         // APIクライアントの生成
         let client = WikiClient(httpClient: URLSession.shared)
         // リクエストの発行
@@ -117,14 +100,9 @@ final class ArticleViewController: UIViewController {
                 }
             } catch(let error) {
                 print(error)
-                showAlert(message: getArticleErrorMessage)
+                    showAlert(title: alertTitle, message: getArticleErrorMessage)
             }
         }
-    }
-    private func showAlert(message: String) {
-        let alert = UIAlertController(title: "エラー", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
     }
 }
 

@@ -11,6 +11,7 @@ import WebKit
 
 final class WebViewController: UIViewController {
 
+    private let alertTitle = "エラー"
     static let storyboardName = "Web"
 
     static func makeFromStoryboard() -> WebViewController? {
@@ -42,7 +43,7 @@ final class WebViewController: UIViewController {
         guard
             let wikiArticle = wikiArticle,
             let url = URL(string: wikiArticle.urlStr) else {
-            showError(WebViewError.connectionError.description)
+                showAlert(title: alertTitle,message: WebViewError.connectionError.description)
             return
         }
         let request = URLRequest(url: url)
@@ -52,11 +53,6 @@ final class WebViewController: UIViewController {
         }
     }
 
-    private func showError(_ message: String) {
-        let alert = UIAlertController(title: "エラー", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
     @objc func refreshWebView() {
         webView.reload()
     }
@@ -65,12 +61,12 @@ final class WebViewController: UIViewController {
 extension WebViewController: WKNavigationDelegate {
     // ページの読み込み失敗
     func webView(_ webView: WKWebView, didFail nabigation: WKNavigation!, withError error: Error) {
-        showError(WebViewError.pageLoadError.description)
+            showAlert(title: alertTitle, message: WebViewError.connectionError.description)
         connectionErrorView.isHidden = false
     }
     // ユーザーのネットワーク接続が切れてるとき呼び出し
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        showError(WebViewError.connectionError.description)
+            showAlert(title: alertTitle, message: WebViewError.connectionError.description)
         connectionErrorView.isHidden = false
     }
 

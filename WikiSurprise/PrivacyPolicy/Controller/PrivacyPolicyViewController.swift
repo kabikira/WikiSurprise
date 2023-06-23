@@ -10,8 +10,8 @@ import WebKit
 
 final class PrivacyPolicyViewController: UIViewController {
 
+    private let alertTitle = "エラー"
     private let privacyPolicyURL = "https://kabikira.github.io/imael.github.io/privacy/privacy.html"
-
     static let storyboardName = "PrivacyPolicy"
 
     static func makeFromStoryboard() -> PrivacyPolicyViewController? {
@@ -24,7 +24,6 @@ final class PrivacyPolicyViewController: UIViewController {
     }
     @IBOutlet private weak var indicator: UIActivityIndicatorView!
     @IBOutlet private weak var connectionErrorView: UIView!
-
     @IBOutlet private weak var closeButton: UIButton! {
         didSet {
                     if isBeingPresented {
@@ -38,7 +37,6 @@ final class PrivacyPolicyViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.navigationDelegate = self
@@ -49,7 +47,7 @@ final class PrivacyPolicyViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refreshWebView))
         guard
             let url = URL(string: privacyPolicyURL) else {
-            showError(WebViewError.connectionError.description)
+                showAlert(title: alertTitle,message: WebViewError.connectionError.description)
             return
         }
         let request = URLRequest(url: url)
@@ -58,11 +56,7 @@ final class PrivacyPolicyViewController: UIViewController {
             self.webView.isHidden = false
         }
     }
-    private func showError(_ message: String) {
-            let alert = UIAlertController(title: "エラー", message: message, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
+    
     @objc func refreshWebView() {
         webView.reload()
     }
@@ -70,12 +64,12 @@ final class PrivacyPolicyViewController: UIViewController {
 extension PrivacyPolicyViewController: WKNavigationDelegate {
     // ページの読み込み失敗
     func webView(_ webView: WKWebView, didFail nabigation: WKNavigation!, withError error: Error) {
-        showError(WebViewError.pageLoadError.description)
+            showAlert(title: alertTitle,message: WebViewError.connectionError.description)
         connectionErrorView.isHidden = false
     }
     // ユーザーのネットワーク接続が切れてるとき呼び出し
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        showError(WebViewError.connectionError.description)
+            showAlert(title: alertTitle,message: WebViewError.connectionError.description)
         connectionErrorView.isHidden = false
     }
 
