@@ -16,7 +16,7 @@ final class ArticleViewController: UIViewController {
     private let backButtonTitle = "Back"
     private let getArticleErrorMessage = "記事の取得に失敗しました｡"
     private let alertTitle = "エラー"
-    private let rightBarButtonTitle = "info"
+    private let sfSymbolsName = "gearshape"
     private let iconImageName = "icon"
     private let motionEffectRange: CGFloat = 200.0
 
@@ -32,7 +32,7 @@ final class ArticleViewController: UIViewController {
             if let image: UIImage = UIImage(named: iconImageName) {
                 motionImageView.image = image
             }
-           motionEffect(effectRange: motionEffectRange, targetView: motionImageView)
+            motionEffect(effectRange: motionEffectRange, targetView: motionImageView)
         }
     }
 
@@ -55,7 +55,7 @@ final class ArticleViewController: UIViewController {
         super.viewDidLoad()
         tableView.isHidden = true
         indicator.isHidden = true
-        setUpNavigationBar(title: navigationTitle, backButtonTitle: backButtonTitle, rightButtonTitle: rightBarButtonTitle, rightBarButtonAction: #selector(tappedInfo))
+        setUpNavigationBar(sfSymbols: sfSymbolsName,backButtonTitle: backButtonTitle, rightBarButtonAction: #selector(tappedInfo))
 
         NetworkMonitor.shared.startMonitoring()
         NotificationCenter.default.addObserver(self, selector: #selector(connectionLost), name: NetworkMonitor.connectionLost, object: nil)
@@ -64,7 +64,7 @@ final class ArticleViewController: UIViewController {
         Router.shared.showInfo(from: self)
     }
     @objc func connectionLost() {
-            showAlert(title: alertTitle, message: NetworkMonitor.connectionLost.rawValue)
+        showAlert(title: alertTitle, message: NetworkMonitor.connectionLost.rawValue)
 
     }
     @objc func tapFetchArticleButton(_sender: UIButton) {
@@ -100,7 +100,7 @@ final class ArticleViewController: UIViewController {
                 }
             } catch(let error) {
                 print(error)
-                    showAlert(title: alertTitle, message: getArticleErrorMessage)
+                showAlert(title: alertTitle, message: getArticleErrorMessage)
             }
         }
     }

@@ -28,10 +28,9 @@ extension UIViewController {
         targetView.motionEffects = [xMotion, yMotion]
     }
     // ArticleViewControllerのみで使用
-    func setUpNavigationBar(title: String, backButtonTitle: String, rightButtonTitle: String, rightBarButtonAction: Selector) {
+    func setUpNavigationBar(sfSymbols: String, backButtonTitle: String, rightBarButtonAction: Selector) {
         navigationItem.hidesBackButton = true
-        navigationItem.title = title
         navigationItem.backButtonTitle = backButtonTitle
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: rightButtonTitle, style: .done, target: self, action: rightBarButtonAction)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image:UIImage(systemName: sfSymbols), style: .done, target: self, action: rightBarButtonAction)
     }
 }
