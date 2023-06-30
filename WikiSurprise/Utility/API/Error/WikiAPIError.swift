@@ -15,4 +15,5 @@ struct WikiAPIError: Decodable, Error {
         case code, info
         case documentationURI = "*"
     }
+
 }
