@@ -7,20 +7,20 @@
 
 import Foundation
 
-public final class WikiAPI {
-    public struct GetArticles: WikiRequest {
+final class WikiAPI {
+    struct GetArticles: WikiRequest {
 
-        public typealias Response = RandomResponse
+        typealias Response = RandomResponse
 
-        public var path: String {
+        var path: String {
             return "/w/api.php"
         }
 
-        public var method: HTTPMethod {
+        var method: HTTPMethod {
             return .get
         }
 
-        public var queryItems: [URLQueryItem] {
+        var queryItems: [URLQueryItem] {
             return [
                 URLQueryItem(name: "action", value: "query"),
                 URLQueryItem(name: "list", value: "random"),

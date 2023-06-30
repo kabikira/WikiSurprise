@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zi8-9m-kE7">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Privacy Policy View Controller-->
+        <scene sceneID="bqQ-B7-yoC">
+            <objects>
+                <viewController id="zi8-9m-kE7" customClass="PrivacyPolicyViewController" customModule="WikiSurprise" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="40i-5I-52e">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kmf-QM-lnP">
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ZWM-zx-DOa">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="30"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KET-vB-Hga">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2o-D8-WMk">
+                                                        <rect key="frame" x="0.0" y="0.0" width="393" height="30"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="閉じる"/>
+                                                        <connections>
+                                                            <action selector="closeModalButton:" destination="zi8-9m-kE7" eventType="touchUpInside" id="Pfg-hR-Efa"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="e2o-D8-WMk" firstAttribute="leading" secondItem="KET-vB-Hga" secondAttribute="leading" id="HX7-hu-NPT"/>
+                                                    <constraint firstItem="e2o-D8-WMk" firstAttribute="top" secondItem="KET-vB-Hga" secondAttribute="top" id="ID9-qZ-tLV"/>
+                                                    <constraint firstAttribute="trailing" secondItem="e2o-D8-WMk" secondAttribute="trailing" id="bEM-uh-vsy"/>
+                                                    <constraint firstAttribute="bottom" secondItem="e2o-D8-WMk" secondAttribute="bottom" id="fKm-cf-nkH"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="fox-Nt-5S8"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oxi-cr-4te">
+                                        <rect key="frame" x="0.0" y="30" width="393" height="763"/>
+                                        <subviews>
+                                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s07-Ax-dbs">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="763"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <wkWebViewConfiguration key="configuration">
+                                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                                    <wkPreferences key="preferences"/>
+                                                </wkWebViewConfiguration>
+                                            </wkWebView>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="aQT-65-D0O">
+                                                <rect key="frame" x="186.66666666666666" y="371.66666666666669" width="20" height="20"/>
+                                            </activityIndicatorView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="s07-Ax-dbs" secondAttribute="trailing" id="2Bv-3f-lcX"/>
+                                            <constraint firstItem="aQT-65-D0O" firstAttribute="centerY" secondItem="Oxi-cr-4te" secondAttribute="centerY" id="Ds7-sD-kbG"/>
+                                            <constraint firstItem="aQT-65-D0O" firstAttribute="centerX" secondItem="Oxi-cr-4te" secondAttribute="centerX" id="Qmk-pn-leY"/>
+                                            <constraint firstItem="s07-Ax-dbs" firstAttribute="leading" secondItem="Oxi-cr-4te" secondAttribute="leading" id="VsR-nG-ehr"/>
+                                            <constraint firstAttribute="bottom" secondItem="s07-Ax-dbs" secondAttribute="bottom" id="cFm-RG-Uh4"/>
+                                            <constraint firstItem="s07-Ax-dbs" firstAttribute="top" secondItem="Oxi-cr-4te" secondAttribute="top" id="xpQ-WD-s9O"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Thq-Je-Bxb">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aKB-90-Egz">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="インターネットに接続されていません" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYF-ym-ydr">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="aKB-90-Egz" secondAttribute="trailing" id="8P1-NO-mDn"/>
+                                    <constraint firstItem="aKB-90-Egz" firstAttribute="top" secondItem="Thq-Je-Bxb" secondAttribute="top" id="FRd-HB-q7b"/>
+                                    <constraint firstItem="aKB-90-Egz" firstAttribute="leading" secondItem="Thq-Je-Bxb" secondAttribute="leading" id="FUs-px-uBK"/>
+                                    <constraint firstAttribute="bottom" secondItem="aKB-90-Egz" secondAttribute="bottom" id="lVO-NB-gEa"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7hh-cp-3WH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kmf-QM-lnP" firstAttribute="top" secondItem="7hh-cp-3WH" secondAttribute="top" id="9g2-t0-icn"/>
+                            <constraint firstItem="kmf-QM-lnP" firstAttribute="leading" secondItem="7hh-cp-3WH" secondAttribute="leading" id="J5T-FF-nzz"/>
+                            <constraint firstItem="Thq-Je-Bxb" firstAttribute="top" secondItem="7hh-cp-3WH" secondAttribute="top" id="L4c-0e-QmR"/>
+                            <constraint firstItem="Thq-Je-Bxb" firstAttribute="trailing" secondItem="7hh-cp-3WH" secondAttribute="trailing" id="SsG-vR-1os"/>
+                            <constraint firstAttribute="bottom" secondItem="kmf-QM-lnP" secondAttribute="bottom" id="cWV-yl-bRR"/>
+                            <constraint firstItem="Thq-Je-Bxb" firstAttribute="leading" secondItem="7hh-cp-3WH" secondAttribute="leading" id="dGx-Gc-Ake"/>
+                            <constraint firstItem="7hh-cp-3WH" firstAttribute="trailing" secondItem="kmf-QM-lnP" secondAttribute="trailing" id="j9q-4E-ohk"/>
+                            <constraint firstItem="Thq-Je-Bxb" firstAttribute="bottom" secondItem="7hh-cp-3WH" secondAttribute="bottom" id="ndJ-bP-ayg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="e2o-D8-WMk" id="0a6-IQ-6f5"/>
+                        <outlet property="connectionErrorView" destination="Thq-Je-Bxb" id="mk4-tZ-p50"/>
+                        <outlet property="indicator" destination="aQT-65-D0O" id="gDN-Eh-BrT"/>
+                        <outlet property="webView" destination="s07-Ax-dbs" id="hsj-3P-EOB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DLV-Q1-2pu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="12" y="-2"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -5,6 +5,7 @@
 //  Created by koala panda on 2023/06/09.
 //
 
+import Foundation
 struct WikiAPIError: Decodable, Error {
     var code: String
     var info: String

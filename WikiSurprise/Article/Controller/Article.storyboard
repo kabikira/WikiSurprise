@@ -23,19 +23,28 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IRw-hL-ao1">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="683"/>
                                         <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3JN-jg-ZgF">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="683"/>
+                                                <sections/>
+                                            </tableView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UNn-Sp-coE">
+                                                <rect key="frame" x="121.66666666666669" y="266.66666666666669" width="150" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="9PB-kF-IQO"/>
+                                                    <constraint firstAttribute="width" constant="150" id="NAy-vV-Ayi"/>
+                                                </constraints>
+                                            </imageView>
                                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Zvq-DK-9TH">
                                                 <rect key="frame" x="186.66666666666666" y="331.66666666666669" width="20" height="20"/>
                                             </activityIndicatorView>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3JN-jg-ZgF">
-                                                <rect key="frame" x="0.0" y="0.0" width="393" height="683"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            </tableView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="UNn-Sp-coE" firstAttribute="centerX" secondItem="IRw-hL-ao1" secondAttribute="centerX" id="1Ol-VR-tYz"/>
                                             <constraint firstItem="Zvq-DK-9TH" firstAttribute="centerY" secondItem="IRw-hL-ao1" secondAttribute="centerY" id="D4D-Lx-BJy"/>
                                             <constraint firstAttribute="trailing" secondItem="3JN-jg-ZgF" secondAttribute="trailing" id="NXe-yj-ewD"/>
                                             <constraint firstAttribute="bottom" secondItem="3JN-jg-ZgF" secondAttribute="bottom" id="TKi-xn-jxg"/>
+                                            <constraint firstItem="UNn-Sp-coE" firstAttribute="centerY" secondItem="IRw-hL-ao1" secondAttribute="centerY" id="d7l-nG-lbp"/>
                                             <constraint firstItem="Zvq-DK-9TH" firstAttribute="centerX" secondItem="IRw-hL-ao1" secondAttribute="centerX" id="h20-gB-NeV"/>
                                             <constraint firstItem="3JN-jg-ZgF" firstAttribute="leading" secondItem="IRw-hL-ao1" secondAttribute="leading" id="sNA-pv-Eiw"/>
                                             <constraint firstItem="3JN-jg-ZgF" firstAttribute="top" secondItem="IRw-hL-ao1" secondAttribute="top" id="uIj-0j-Slv"/>
@@ -73,6 +82,7 @@
                     <connections>
                         <outlet property="fetchArticleButton" destination="Ghx-cg-hfY" id="8fC-gA-hsK"/>
                         <outlet property="indicator" destination="Zvq-DK-9TH" id="h4S-Hq-eAs"/>
+                        <outlet property="motionImageView" destination="UNn-Sp-coE" id="TbU-oX-DO4"/>
                         <outlet property="tableView" destination="3JN-jg-ZgF" id="Q5N-RD-vhU"/>
                     </connections>
                 </viewController>

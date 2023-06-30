@@ -7,31 +7,45 @@
 
 import UIKit
 
-class AppIntroductionViewController: UIViewController {
+final class AppIntroductionViewController: UIViewController {
 
-    private let testImage: UIImage! = UIImage(named: "test")
+    private let introductionImageName = "WikiSurprise"
 
-    @IBOutlet weak var intorductionImage: UIImageView! {
+    static let storyboardName = "AppIntroduction"
+
+    static func makeFromStoryboard() -> AppIntroductionViewController? {
+        return UIStoryboard(name: storyboardName, bundle: nil).instantiateInitialViewController() as? AppIntroductionViewController
+    }
+
+@IBOutlet weak var introductionImage: UIImageView! {
         didSet {
-            intorductionImage.image = testImage
-
+            if let image: UIImage = UIImage(named: introductionImageName) {
+                introductionImage.image = image
+            }
         }
     }
-    @IBOutlet weak var doneButton: UIButton!
-
-    @IBAction func nextViewButton(_ sender: Any) {
+    @IBOutlet private weak var doneButton: UIButton! {
+        didSet {
+            if UserDefaults.standard.isLogined {
+                doneButton.isHidden = true
+            }
+        }
+    }
+    @IBAction private func nextViewButton(_ sender: Any) {
         UserDefaults.standard.isLogined = true
         doneButton.isEnabled = false
         Router.shared.showArticle(from: self)
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBOutlet private weak var closeButton: UIButton! {
+        didSet {
+            if isBeingPresented {
+                closeButton.isHidden = false
+            } else {
+                closeButton.isHidden = true
+            }
+        }
     }
-    
-
-
-
+    @IBAction private func closeModalButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }

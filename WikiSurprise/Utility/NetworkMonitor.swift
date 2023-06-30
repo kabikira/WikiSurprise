@@ -11,9 +11,7 @@ import Network
 
 final class NetworkMonitor {
     static let shared = NetworkMonitor()
-
     private let monitor: NWPathMonitor
-
     static let connectionLost = Notification.Name("ネットワーク接続が切断されました｡")
 
     private init() {
@@ -23,9 +21,7 @@ final class NetworkMonitor {
     func startMonitoring() {
         monitor.pathUpdateHandler = { path in
             if path.status == .satisfied {
-                print("We're connected!")
             } else {
-                print("No connection.")
                 NotificationCenter.default.post(name: NetworkMonitor.connectionLost, object: nil)
             }
         }
