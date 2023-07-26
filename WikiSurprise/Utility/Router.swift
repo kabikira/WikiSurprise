@@ -34,10 +34,10 @@ final class Router {
         self.window = window
     }
     func showArticle(from: UIViewController) {
-        guard let Article = ArticleViewController.makeFromStoryboard() else {
+        guard let article = ArticleViewController.makeFromStoryboard() else {
             return
         }
-        show(from: from, to: Article)
+        show(from: from, to: article)
     }
     func showWeb(from: UIViewController, articleModel: Article) {
         guard let web = WebViewController.makeFromStoryboard() else {
