@@ -17,7 +17,15 @@ final class AppIntroductionViewController: UIViewController {
         return UIStoryboard(name: storyboardName, bundle: nil).instantiateInitialViewController() as? AppIntroductionViewController
     }
 
-@IBOutlet weak var introductionImage: UIImageView! {
+
+    @IBOutlet private weak var guideLabel: UILabel! {
+        didSet {
+            if traitCollection.userInterfaceIdiom == .pad {
+                guideLabel.isHidden = true
+            }
+        }
+    }
+    @IBOutlet weak var introductionImage: UIImageView! {
         didSet {
             if let image: UIImage = UIImage(named: introductionImageName) {
                 introductionImage.image = image
