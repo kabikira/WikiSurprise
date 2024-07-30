@@ -13,7 +13,7 @@ WikiSurpriseは、GitHub-Flowでブランチ運用を練習するためのアプ
 * 外部ライブラリの使用なし  
 
 ## 自己評価
-- 成功点:
+- 良い点:
 	-  設計
 		- Cocoa MVCで実装
 		- Routerを使用により画面遷移に関する責務の分割した｡
@@ -23,7 +23,7 @@ WikiSurpriseは、GitHub-Flowでブランチ運用を練習するためのアプ
 		- レイアウト変更に柔軟に対応できるようできるだけ､UIStackViewを使用した｡
 		- UserDefaultsでアプリ起動時の画面を制御
 		- Storyboard開く際のロード時間を短縮､編集､共同開発しやすいように1Storyboard, 1ViewControllerとした｡
-    - セルを再使用するように実装
+  		- セルを再使用するように実装
   - その他
     - アプリ初回起動時にアプリのチュートリアルを実装
     - WikiAPIのエラーハンドリングを行った｡
