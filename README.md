@@ -1,21 +1,48 @@
 # WikiSurprise
 WikiSurpriseは、GitHub-Flowでブランチ運用を練習するためのアプリケーションです。ウィキペディアのAPIからランダムに記事を取得し、それをテーブルビューのセルに表示し、セルをタップするとWebViewで記事を表示します。  
+<img width="150" src="https://github.com/user-attachments/assets/81b2c6ea-3ef9-44e5-903b-5c856f8a5093">
+<img width="150" src="https://github.com/user-attachments/assets/85bf76ef-2ce8-4b27-959e-4153fd6ed73a">
+<img width="150" src="https://github.com/user-attachments/assets/71ab7dc9-9d9b-4ad9-81d4-c86320e945a0">
+<img width="150" src="https://github.com/user-attachments/assets/706dabba-11bc-406c-a8f5-6af539a74730">
+<img width="150" src="https://github.com/user-attachments/assets/faefe5fd-69c6-497a-bc70-1e6b36d4e205">
+
+
 # 概要
 * 設計 MVC  
 * 画面遷移 Router  
 * 外部ライブラリの使用なし  
 
-Tag V1.0 はAppStoreの初回審査に出したVer  
-Tag V1.1は細かな修正を行いアップデード
+## 自己評価
+- 成功点:
+	-  設計
+		- Cocoa MVCで実装
+		- Routerを使用により画面遷移に関する責務の分割した｡
+	- レイアウト
+		- ライト､ダークモードに対応
+		- UIInterpolatingMotionEffect使用しジャイロセンサーを利用したエフェクトを実装
+		- レイアウト変更に柔軟に対応できるようできるだけ､UIStackViewを使用した｡
+		- UserDefaultsでアプリ起動時の画面を制御
+		- Storyboard開く際のロード時間を短縮､編集､共同開発しやすいように1Storyboard, 1ViewControllerとした｡
+    - セルを再使用するように実装
+  - その他
+    - アプリ初回起動時にアプリのチュートリアルを実装
+    - WikiAPIのエラーハンドリングを行った｡
+    - issueを立てアプリの課題を可視化し､その課題に対してブランチを切って対応した｡
+    - 非同期処理をasync/awaitで実装
+    - NetworkMonitorにてアプリがネット回線と繋がっていないとき､通知アラートを実装
+    - APIのリクエストの実装にてbaseURLが同じであれば､WikiAPI.swiftにstructを追加していくことでリクエストのコードを再利用できるように実装
 
-## ディレクトリの説明  
-* **AppIntroduction:** ユーザーがアプリをインストールして初回起動時に表示されるチュートリアル画面のためのコンポーネントが含まれています。  
-* **Article:** ウィキペディアのAPIから取得した記事のタイトルをテーブルビューのセルに表示する主要なビューコンポーネントが含まれています。  
-* **Web:** Articleでタップされた記事のURLをWebViewで表示するためのコンポーネントが含まれています。  
-* **Info:** アプリのお問い合わせやアプリの説明などの項目をテーブルビューで表示するコンポーネントが含まれています。  
-* **PrivacyPolicy:** Infoで表示されたプライバシーポリシーの項目がタップされたときに、アプリのプライバシーポリシーページをWebViewで表示するコンポーネントが含まれています。  
-* **Model:** アプリのモデルに関連するファイルが含まれています。Article.swiftはウィキペディアの記事を表し、InfoItem.swiftはアプリ内の情報項目を表します。  
-* **Utility:** ユーティリティクラスが含まれています。APIディレクトリにはAPIのレスポンスやエラー処理に関する機能が、他にRouter､NWPathMonitorを使用したネットワーク接続を監視するクラスなどを持っています｡  
+
+
+
+- 問題点:
+  - テストがない｡
+  - 文字列を定数に代入しハードコードを防いでいるが､アプリ内で使う定数をファイルにまとめたほうがいいのかもしれない｡
+
+### アウトプット
+- UIInterpolatingMotionEffectの実装方法について記事を投稿しました｡[Qiita記事リンク](https://qiita.com/Imael/items/1f66307e08243bbea825) 
+
+
 
 
 
