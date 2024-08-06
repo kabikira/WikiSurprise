@@ -28,7 +28,7 @@ WikiSurpriseは、GitHub-Flowでブランチ運用を練習するためのアプ
     - アプリ初回起動時にアプリのチュートリアルを実装
     - WikiAPIのエラーハンドリングを行った｡
     - issueを立てアプリの課題を可視化し､その課題に対してブランチを切って対応した｡
-    - 非同期処理をasync/awaitで実装
+    - 非同期処理をasync/awaitで実装 https://github.com/kabikira/WikiSurprise/pull/93
     - NetworkMonitorにてアプリがネット回線と繋がっていないとき､通知アラートを実装
     - APIのリクエストの実装にてbaseURLが同じであれば､WikiAPI.swiftにstructを追加していくことでリクエストのコードを再利用できるように実装
 
