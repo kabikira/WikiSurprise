@@ -71,7 +71,6 @@ extension WebViewController: WKNavigationDelegate {
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        print("WebView did finish loading.")
         indicator.isHidden = true
         indicator.stopAnimating()
         connectionErrorView.isHidden = true
