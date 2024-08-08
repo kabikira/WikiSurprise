@@ -74,7 +74,6 @@ extension PrivacyPolicyViewController: WKNavigationDelegate {
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        print("WebView did finish loading.")
         indicator.isHidden = true
         indicator.startAnimating()
         connectionErrorView.isHidden = true

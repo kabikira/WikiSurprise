@@ -89,7 +89,6 @@ final class ArticleViewController: UIViewController {
         Task {
             do {
                 articles = try await client.send(request: request).query.random ?? []
-                print(articles)
                 await MainActor.run {
                     indicator.isHidden = true
                     indicator.stopAnimating()
@@ -99,7 +98,6 @@ final class ArticleViewController: UIViewController {
                     tableView.reloadData()
                 }
             } catch(let error) {
-                print(error)
                 showAlert(title: alertTitle, message: getArticleErrorMessage)
             }
         }
@@ -120,8 +118,6 @@ extension ArticleViewController: UITableViewDataSource {
         }
 
         let article = articles[indexPath.row]
-        // デバッグ
-        print("Article for cell at row \(indexPath.row): \(article)")
         cell.configure(article: article)
         return cell
     }
