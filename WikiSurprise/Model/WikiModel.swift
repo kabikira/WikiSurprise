@@ -17,6 +17,6 @@ struct Query: Codable {
     let random: [Article]?
 }
 
-struct RandomResponse: Codable {
+struct WikiResponse: Codable {
     let query: Query
 }

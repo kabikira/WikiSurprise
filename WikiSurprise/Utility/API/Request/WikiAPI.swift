@@ -10,7 +10,7 @@ import Foundation
 final class WikiAPI {
     struct GetArticles: WikiRequest {
 
-        typealias Response = RandomResponse
+        typealias Response = WikiResponse
 
         var path: String {
             return "/w/api.php"
