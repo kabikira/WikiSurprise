@@ -1,5 +1,5 @@
 # WikiSurprise
-WikiSurpriseは、GitHub-Flowでブランチ運用を練習するためのアプリケーションです。ウィキペディアのAPIからランダムに記事を取得し、それをテーブルビューのセルに表示し、セルをタップするとWebViewで記事を表示します。  
+WikiSurpriseは、ウィキペディアのAPIからランダムに記事を取得し、それをテーブルビューのセルに表示し、セルをタップするとWebViewで記事を表示します。  
 <img width="150" src="https://github.com/user-attachments/assets/81b2c6ea-3ef9-44e5-903b-5c856f8a5093">
 <img width="150" src="https://github.com/user-attachments/assets/85bf76ef-2ce8-4b27-959e-4153fd6ed73a">
 <img width="150" src="https://github.com/user-attachments/assets/71ab7dc9-9d9b-4ad9-81d4-c86320e945a0">
