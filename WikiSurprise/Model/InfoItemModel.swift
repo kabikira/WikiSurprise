@@ -17,5 +17,5 @@ let infoItems: [InfoItem] = [
     InfoItem(emoji: "👀", title: "アプリの説明"),
     InfoItem(emoji: "✉️", title: "お問い合わせ"),
     InfoItem(emoji: "📝", title: "プライバシーポリシー"),
-    InfoItem(emoji: "📱", title: "バージョン Ver1.0")
+    InfoItem(emoji: "📱", title: "バージョン Ver1.1")
 ]
