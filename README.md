@@ -31,6 +31,7 @@ WikiSurpriseは、ウィキペディアのAPIからランダムに記事を取�
     - 非同期処理をasync/awaitで実装 https://github.com/kabikira/WikiSurprise/pull/93
     - NetworkMonitorにてアプリがネット回線と繋がっていないとき､通知アラートを実装
     - APIのリクエストの実装にてbaseURLが同じであれば､WikiAPI.swiftにstructを追加していくことでリクエストのコードを再利用できるように実装
+    - falstlaenにてユニットテスト実行､メタデータ更新､デバッグビルド､リリースビルド､appstoreにアップロード自動化 https://github.com/kabikira/WikiSurprise/pull/115
 
 
 
