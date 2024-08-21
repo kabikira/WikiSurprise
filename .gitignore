@@ -65,6 +65,7 @@ Carthage/Build
 fastlane/report.xml
 fastlane/screenshots/**/*.png
 fastlane/test_output
+fastlane/.env
 
 # Code Injection
 #
