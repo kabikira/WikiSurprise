@@ -10,13 +10,16 @@ WikiSurpriseは、ウィキペディアのAPIからランダムに記事を取�
 # 概要
 * 設計 MVC  
 * 画面遷移 Router  
-* 外部ライブラリの使用なし  
+* 外部ライブラリの使用なし
+
+## 作成理由　　
+自分のみたい情報しか見えなくなる中で、普段興味を持つことがないようなテーマについて、新しい知識や視点を発見できるようにするため作成。　　
 
 ## 自己評価
-- 良い点:
+- 工夫した点:
 	-  設計
 		- Cocoa MVCで実装
-		- Routerを使用により画面遷移に関する責務の分割した｡
+		- Routerパターンの使用により画面遷移に関する責務の分割した｡
 	- レイアウト
 		- ライト､ダークモードに対応
 		- UIInterpolatingMotionEffect使用しジャイロセンサーを利用したエフェクトを実装
@@ -29,7 +32,7 @@ WikiSurpriseは、ウィキペディアのAPIからランダムに記事を取�
     - WikiAPIのエラーハンドリングを行った｡
     - issueを立てアプリの課題を可視化し､その課題に対してブランチを切って対応した｡
     - 非同期処理をasync/awaitで実装 https://github.com/kabikira/WikiSurprise/pull/93
-    - NetworkMonitorにてアプリがネット回線と繋がっていないとき､通知アラートを実装
+    - NetworkMonitorでネットワーク接続を感知し、機内モード、ネットワークに繋がってない時にアラート出すよう実装
     - APIのリクエストの実装にてbaseURLが同じであれば､WikiAPI.swiftにstructを追加していくことでリクエストのコードを再利用できるように実装
     - falstlaenにてユニットテスト実行､メタデータ更新､デバッグビルド､リリースビルド､appstoreにアップロード自動化 https://github.com/kabikira/WikiSurprise/pull/115
 
