@@ -1,0 +1,83 @@
+
+default_platform(:ios)
+
+platform :ios do
+
+  desc "Debugビルド"
+  lane :build do
+    increment_build_number(xcodeproj: "WikiSurprise.xcodeproj")
+    increment_version_number(bump_type: "patch")
+
+    # アクションの呼び出し
+    build_ios_app(
+        project: "WikiSurprise.xcodeproj",
+        scheme: "WikiSurprise",
+        configuration: "Debug",
+        clean: true,
+        output_directory: "build",
+        output_name: "myapp_debug.ipa"
+    )
+  end
+  
+  desc "単体テストの実行"
+  lane :unittest do
+  
+    # アクションの呼び出し
+        run_tests(
+            project: "WikiSurprise.xcodeproj",
+            scheme: "WikiSurprise",
+            configuration: "Debug",
+            clean: true,
+            devices: ["iPhone 15 Pro"],
+            open_report: true,
+            output_types: "html",
+            output_directory: "test",
+            slack_url: ENV["SLACK_WEBHOOK_URL"]
+        )
+  end
+  
+  desc "メタデータの更新"
+  lane :update_metadata do
+  
+        upload_to_app_store(
+            username: ENV["USRENAME"],
+            app_identifier:  ENV["APP_IDENTIFIER"],
+            force: false
+        )
+  end
+  
+    desc "Releaseビルド"
+    lane :release_build do
+      increment_build_number(xcodeproj: "WikiSurprise.xcodeproj")
+      increment_version_number(bump_type: "patch")
+      
+      # アクションの呼び出し
+      build_ios_app(
+          project: "WikiSurprise.xcodeproj",
+          scheme: "WikiSurprise",
+          configuration: "Release",  # リリースビルドを指定
+          clean: true,
+          output_directory: "build",
+          output_name: "myapp_release.ipa"
+      )
+    
+    end
+  
+  desc "リリース"
+  lane :release do
+  
+    build_app(scheme: "WikiSurprise")
+    upload_to_app_store(
+        username: ENV["FASTLANE_USER"],
+        ipa: "./build/myapp_release.ipa",
+        skip_screenshots: true,
+        skip_metadata: true,
+        force: true,
+      )
+    slack(
+      message: "Successfully uploaded a new App Store build",
+      slack_url: ENV["SLACK_WEBHOOK_URL"]
+    )
+  end
+  
+end
